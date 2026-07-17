@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Sign In - DentaCare Clinic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="auth-body">
+  <main class="auth-page">
+    <img class="auth-line auth-line-left" src="images/Single BlueLine.png" alt="" aria-hidden="true" />
+    <img class="auth-line auth-line-right" src="images/Single BlueLine.png" alt="" aria-hidden="true" />
+    <section class="auth-card auth-card-login" aria-labelledby="loginTitle">
+      <a class="auth-brand" href="home.html" aria-label="DentaCare home">
+        <img src="images/DentaCare logo1.png" alt="DentaCare logo" />
+      </a>
+      <h1 id="loginTitle">DentaCare</h1>
+      <p class="auth-subtitle">Welcome back to your dental portal</p>
+
+      <form class="auth-form" id="loginForm" novalidate>
+        <div class="auth-field">
+          <label for="loginEmail">Email:</label>
+          <div class="auth-input-wrap auth-icon-email">
+            <input id="loginEmail" name="email" type="email" placeholder="your@email.com" required aria-describedby="loginEmailError" />
+          </div>
+          <p class="auth-error" id="loginEmailError"></p>
+        </div>
+        <div class="auth-field">
+          <label for="loginPassword">Password:</label>
+          <div class="auth-input-wrap auth-icon-lock">
+            <input id="loginPassword" name="password" type="password" placeholder="Enter your password" required aria-describedby="loginPasswordError" />
+            <button class="password-toggle" type="button" aria-label="Show password">Show</button>
+          </div>
+          <p class="auth-error" id="loginPasswordError"></p>
+        </div>
+      <div class="auth-options">
+        <label class="remember-option">
+          <input type="checkbox" name="remember" />
+          <span>Remember me</span>
+        </label>
+        <a href="forgot-password.html">Forgot password?</a>
+      </div>
+      <button class="btn btn-primary btn-large auth-submit" type="submit">
+        <span class="button-label">Sign In</span>
+        <span class="button-spinner" aria-hidden="true"></span>
+      </button>
+        <p class="auth-message" id="loginMessage" role="status" aria-live="polite"></p>
+      </form>
+      <p class="auth-footer-text">Don't have an account? <a href="register.html">Register Account</a></p>
+    </section>
+  </main>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+  <script src="auth.js"></script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

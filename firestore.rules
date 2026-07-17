@@ -1,0 +1,31 @@
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function signedIn() {
+      return request.auth != null;
+    }
+
+    function ownsUserDocument(userId) {
+      return signedIn() && request.auth.uid == userId;
+    }
+
+    function ownsBooking() {
+      return signedIn() && resource.data.userId == request.auth.uid;
+    }
+
+    function isCreatingOwnBooking() {
+      return signedIn() && request.resource.data.userId == request.auth.uid;
+    }
+
+    match /users/{userId} {
+      allow create, read, update: if ownsUserDocument(userId);
+      allow delete: if false;
+    }
+
+    match /bookings/{bookingId} {
+      allow create: if isCreatingOwnBooking();
+      allow read, update, delete: if ownsBooking();
+    }
+  }
+}

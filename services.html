@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Services - DentaCare Clinic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="services-body">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="home.html">
+        <img src="images/DentaCare logo1.png" alt="DentaCare logo" />
+      </a>
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html" class="nav-active">Services</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <button class="mobile-close" type="button" aria-label="Close menu">&times;</button>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html" class="mobile-login">Login/Register</a>
+      </nav>
+      <a class="btn btn-login" href="login.html">Login/Register</a>
+    </div>
+  </header>
+
+  <main class="services-page">
+    <section class="services-hero">
+      <img class="services-line services-line-left" src="images/Single BlueLine.png" alt="" aria-hidden="true" />
+      <img class="services-line services-line-right" src="images/Single BlueLine.png" alt="" aria-hidden="true" />
+      <div class="container services-hero-inner">
+        <h1>Our Services</h1>
+        <p>Explore our range of professional dental services and book your appointment online.</p>
+      </div>
+    </section>
+
+    <section class="services-grid-section">
+      <div class="container services-card-grid">
+        <article class="service-card">
+          <img src="images/Teeth Cleaning.jpg" alt="Dental cleaning treatment" />
+          <h2>Teeth Cleaning</h2>
+          <p>Professional cleaning to maintain oral hygiene and remove plaque buildup.</p>
+          <p class="service-meta">Duration: 45 min | Price: R500</p>
+          <a class="btn btn-primary btn-large service-book-btn" href="home.html#book">Book Now</a>
+        </article>
+        <article class="service-card">
+          <img src="images/Fillings.jpg" alt="Dental filling treatment" />
+          <h2>Fillings</h2>
+          <p>Restorative treatment for cavities using durable tooth-colored fillings.</p>
+          <p class="service-meta">Duration: 60 min | Price: R700</p>
+          <a class="btn btn-primary btn-large service-book-btn" href="home.html#book">Book Now</a>
+        </article>
+        <article class="service-card">
+          <img src="images/Teeth Whitening.jpg" alt="Teeth whitening result" />
+          <h2>Teeth Whitening</h2>
+          <p>Achieve a brighter smile with professional whitening treatments.</p>
+          <p class="service-meta">Duration: 90 min | Price: R1400</p>
+          <a class="btn btn-primary btn-large service-book-btn" href="home.html#book">Book Now</a>
+        </article>
+        <article class="service-card">
+          <img src="images/Tooth Exctration.jpg" alt="Tooth extraction treatment" />
+          <h2>Tooth Extraction</h2>
+          <p>Safe and gentle removal of problematic or damaged teeth.</p>
+          <p class="service-meta">Duration: 75 min | Price: R800</p>
+          <a class="btn btn-primary btn-large service-book-btn" href="home.html#book">Book Now</a>
+        </article>
+        <article class="service-card">
+          <img src="images/Root Canal.jpg" alt="Root canal dental illustration" />
+          <h2>Root Canal</h2>
+          <p>Treatment for infected tooth pulp to save and restore natural teeth.</p>
+          <p class="service-meta">Duration: 120 min | Price: R1850</p>
+          <a class="btn btn-primary btn-large service-book-btn" href="home.html#book">Book Now</a>
+        </article>
+        <article class="service-card">
+          <img src="images/Dental Implants.jpg" alt="Dental implant treatment" />
+          <h2>Dental Implants</h2>
+          <p>Permanent solution for replacing missing teeth and restoring confidence.</p>
+          <p class="service-meta">Duration: Varies | Price: R3000</p>
+          <a class="btn btn-primary btn-large service-book-btn" href="home.html#book">Book Now</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="services-booking-cta reveal-on-scroll" id="book">
+      <img class="booking-line booking-line-left" src="images/Single BlueLine.png" alt="" aria-hidden="true" />
+      <img class="booking-line booking-line-right" src="images/Single BlueLine.png" alt="" aria-hidden="true" />
+      <div class="container services-booking-inner">
+        <h2>Ready to book your appointment?</h2>
+        <form class="booking-action" action="home.html#book">
+          <label class="sr-only" for="serviceChoice">Choose service</label>
+          <select id="serviceChoice" name="service">
+            <option value="">Choose service</option>
+            <option>Teeth Cleaning</option>
+            <option>Fillings</option>
+            <option>Teeth Whitening</option>
+            <option>Tooth Extraction</option>
+            <option>Root Canal</option>
+            <option>Dental Implants</option>
+          </select>
+          <button class="btn btn-primary btn-large booking-submit" type="submit">Proceed to Booking</button>
+        </form>
+      </div>
+    </section>
+
+    <section class="booking-process-section reveal-on-scroll">
+      <div class="container">
+        <h2>How Our Booking Process Works</h2>
+        <div class="booking-process-grid">
+          <article class="process-step">
+            <div class="process-icon">
+              <img src="images/Select.png" alt="" aria-hidden="true" />
+            </div>
+            <h3>Select Service</h3>
+            <p>Choose the dental treatment you require from our available services.</p>
+          </article>
+          <article class="process-step">
+            <div class="process-icon">
+              <img src="images/Schedule.png" alt="" aria-hidden="true" />
+            </div>
+            <h3>Choose Date &amp; Time</h3>
+            <p>Select a convenient appointment date and available time slot.</p>
+          </article>
+          <article class="process-step">
+            <div class="process-icon">
+              <img src="images/Check Mark.png" alt="" aria-hidden="true" />
+            </div>
+            <h3>Confirm Appointment</h3>
+            <p>Review your details and confirm your booking instantly.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-secondary-cta reveal-on-scroll">
+      <div class="cta-decor cta-decor--left" aria-hidden="true">
+        <img src="images/Circles Bottom.png" alt="" />
+      </div>
+      <div class="cta-decor cta-decor--right" aria-hidden="true">
+        <img src="images/Circles Bottom.png" alt="" />
+      </div>
+      <div class="container services-secondary-inner">
+        <h2>Get the smile you deserve</h2>
+        <a class="btn btn-primary btn-large secondary-book-btn" href="#book">Book Now</a>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section reveal-on-scroll">
+      <div class="container contact-block">
+        <h2>Contact Us</h2>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <span class="contact-icon contact-icon--phone" aria-hidden="true"></span>
+            <div>
+              <p class="contact-label">Phone:</p>
+              <p class="contact-value"><a href="tel:+274567890">(+27) 456-7890</a></p>
+            </div>
+          </article>
+          <article class="contact-card">
+            <span class="contact-icon contact-icon--email" aria-hidden="true"></span>
+            <div>
+              <p class="contact-label">Email:</p>
+              <p class="contact-value"><a href="mailto:info@dentacare.co.za">info@dentacare.co.za</a></p>
+            </div>
+          </article>
+          <article class="contact-card">
+            <span class="contact-icon contact-icon--location" aria-hidden="true"></span>
+            <div>
+              <p class="contact-label">Address:</p>
+              <p class="contact-value">123 Dental Street, Smile City, ST 12345</p>
+            </div>
+          </article>
+        </div>
+        <div class="contact-footer">
+          <div class="contact-copy">&copy; 2026 DentaCare Clinic. All rights reserved.</div>
+          <nav class="footer-nav">
+            <a href="home.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      const hamburger = document.getElementById('hamburger');
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileClose = mobileNav && mobileNav.querySelector('.mobile-close');
+
+      hamburger && hamburger.addEventListener('click', function(){
+        const open = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!open));
+        mobileNav && mobileNav.setAttribute('aria-hidden', String(open));
+        mobileNav && mobileNav.classList.toggle('open');
+      });
+
+      mobileClose && mobileClose.addEventListener('click', function(){
+        hamburger && hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav && mobileNav.setAttribute('aria-hidden', 'true');
+        mobileNav && mobileNav.classList.remove('open');
+      });
+
+      mobileNav && mobileNav.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+          hamburger && hamburger.setAttribute('aria-expanded', 'false');
+          mobileNav.setAttribute('aria-hidden', 'true');
+          mobileNav.classList.remove('open');
+        });
+      });
+
+      const revealItems = document.querySelectorAll('.reveal-on-scroll');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.16 });
+
+        revealItems.forEach(function(item){
+          observer.observe(item);
+        });
+      } else {
+        revealItems.forEach(function(item){
+          item.classList.add('is-visible');
+        });
+      }
+    })();
+  </script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

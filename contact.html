@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact Us - DentaCare Clinic</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="contact-body">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="home.html">
+        <img src="images/DentaCare logo1.png" alt="DentaCare logo" />
+      </a>
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html" class="nav-active">Contact Us</a>
+      </nav>
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">&#9776;</button>
+      <nav class="mobile-nav" id="mobileNav" aria-hidden="true">
+        <button class="mobile-close" type="button" aria-label="Close menu">&times;</button>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="services.html">Services</a>
+        <a href="contact.html">Contact Us</a>
+        <a href="login.html" class="mobile-login">Login/Register</a>
+      </nav>
+      <a class="btn btn-login" href="login.html">Login/Register</a>
+    </div>
+  </header>
+
+  <main class="contact-page">
+    <section class="contact-page-hero">
+      <div class="container">
+        <h1>Contact Us</h1>
+        <p>We're here to help-get in touch with us</p>
+      </div>
+    </section>
+
+    <section class="contact-info-section reveal-on-scroll">
+      <img class="contact-blue-line contact-blue-line-left" src="images/Single BlueLine.png" alt="" aria-hidden="true" />
+      <div class="container contact-info-grid">
+        <article class="contact-info-card">
+          <span class="contact-info-icon contact-info-phone" aria-hidden="true"></span>
+          <h2>Phone Number</h2>
+          <p>(+27) 456-7890</p>
+        </article>
+        <article class="contact-info-card">
+          <span class="contact-info-icon contact-info-email" aria-hidden="true"></span>
+          <h2>Email Address</h2>
+          <p>info@dentacare.co.za</p>
+        </article>
+        <article class="contact-info-card">
+          <span class="contact-info-icon contact-info-location" aria-hidden="true"></span>
+          <h2>Physical Address</h2>
+          <p>123 Dental Street,<br>Smile City, ST 12345</p>
+        </article>
+        <article class="contact-info-card">
+          <span class="contact-info-icon contact-info-hours" aria-hidden="true"></span>
+          <h2>Operating Hours</h2>
+          <p>Mon-Fri: 9 AM - 5 PM<br>Sat: 9 AM - 1 PM</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="contact-form-section reveal-on-scroll">
+      <div class="container">
+        <form class="contact-form-card" id="contactForm" novalidate>
+          <h2>Send Us a Message</h2>
+          <div class="contact-field">
+            <label for="fullName">Full Name <span aria-hidden="true">*</span></label>
+            <input id="fullName" name="fullName" type="text" placeholder="John Doe" required aria-describedby="fullNameError" />
+            <p class="field-error" id="fullNameError"></p>
+          </div>
+          <div class="contact-field">
+            <label for="emailAddress">Email Address <span aria-hidden="true">*</span></label>
+            <input id="emailAddress" name="emailAddress" type="email" placeholder="john.doe@example.com" required aria-describedby="emailAddressError" />
+            <p class="field-error" id="emailAddressError"></p>
+          </div>
+          <div class="contact-field">
+            <label for="phoneNumber">Phone Number <span aria-hidden="true">*</span></label>
+            <input id="phoneNumber" name="phoneNumber" type="tel" placeholder="(+27) 456-7890" required aria-describedby="phoneNumberError" />
+            <p class="field-error" id="phoneNumberError"></p>
+          </div>
+          <div class="contact-field">
+            <label for="message">Message <span aria-hidden="true">*</span></label>
+            <textarea id="message" name="message" placeholder="Your message here....." required aria-describedby="messageError"></textarea>
+            <p class="field-error" id="messageError"></p>
+          </div>
+          <button class="btn btn-primary btn-large contact-submit" type="submit">Submit</button>
+          <p class="form-success" id="formSuccess" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <section class="contact-map-section reveal-on-scroll">
+      <img class="contact-blue-line contact-blue-line-right" src="images/Single BlueLine.png" alt="" aria-hidden="true" />
+      <div class="container">
+        <h2>Find Us on the Map</h2>
+        <div class="map-card" role="img" aria-label="Map showing DentaCare Clinic at 123 Dental Street, Smile City">
+          <div class="map-road map-road-main"></div>
+          <div class="map-road map-road-side map-road-side-one"></div>
+          <div class="map-road map-road-side map-road-side-two"></div>
+          <div class="map-road map-road-side map-road-side-three"></div>
+          <div class="map-park"></div>
+          <div class="map-road-yellow"></div>
+          <div class="map-pin" aria-hidden="true"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-appointment-cta reveal-on-scroll">
+      <div class="container">
+        <h2>Need an appointment?</h2>
+        <a class="btn btn-primary btn-large" href="services.html#book">Book Now</a>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section reveal-on-scroll">
+      <div class="container contact-block">
+        <h2>Contact Us</h2>
+        <div class="contact-grid">
+          <article class="contact-card">
+            <span class="contact-icon contact-icon--phone" aria-hidden="true"></span>
+            <div>
+              <p class="contact-label">Phone:</p>
+              <p class="contact-value"><a href="tel:+274567890">(+27) 456-7890</a></p>
+            </div>
+          </article>
+          <article class="contact-card">
+            <span class="contact-icon contact-icon--email" aria-hidden="true"></span>
+            <div>
+              <p class="contact-label">Email:</p>
+              <p class="contact-value"><a href="mailto:info@dentacare.co.za">info@dentacare.co.za</a></p>
+            </div>
+          </article>
+          <article class="contact-card">
+            <span class="contact-icon contact-icon--location" aria-hidden="true"></span>
+            <div>
+              <p class="contact-label">Address:</p>
+              <p class="contact-value">123 Dental Street, Smile City, ST 12345</p>
+            </div>
+          </article>
+        </div>
+        <div class="contact-footer">
+          <div class="contact-copy">&copy; 2026 DentaCare Clinic. All rights reserved.</div>
+          <nav class="footer-nav">
+            <a href="home.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="contact.html">Contact</a>
+          </nav>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    (function(){
+      const hamburger = document.getElementById('hamburger');
+      const mobileNav = document.getElementById('mobileNav');
+      const mobileClose = mobileNav && mobileNav.querySelector('.mobile-close');
+
+      hamburger && hamburger.addEventListener('click', function(){
+        const open = this.getAttribute('aria-expanded') === 'true';
+        this.setAttribute('aria-expanded', String(!open));
+        mobileNav && mobileNav.setAttribute('aria-hidden', String(open));
+        mobileNav && mobileNav.classList.toggle('open');
+      });
+
+      mobileClose && mobileClose.addEventListener('click', function(){
+        hamburger && hamburger.setAttribute('aria-expanded', 'false');
+        mobileNav && mobileNav.setAttribute('aria-hidden', 'true');
+        mobileNav && mobileNav.classList.remove('open');
+      });
+
+      mobileNav && mobileNav.querySelectorAll('a').forEach(function(link){
+        link.addEventListener('click', function(){
+          hamburger && hamburger.setAttribute('aria-expanded', 'false');
+          mobileNav.setAttribute('aria-hidden', 'true');
+          mobileNav.classList.remove('open');
+        });
+      });
+
+      const form = document.getElementById('contactForm');
+      const success = document.getElementById('formSuccess');
+      const labels = {
+        fullName: 'Please enter your full name.',
+        emailAddress: 'Please enter a valid email address.',
+        phoneNumber: 'Please enter your phone number.',
+        message: 'Please enter your message.'
+      };
+
+      form && form.addEventListener('submit', function(event){
+        event.preventDefault();
+        let valid = true;
+
+        Object.keys(labels).forEach(function(id){
+          const field = document.getElementById(id);
+          const error = document.getElementById(id + 'Error');
+          const invalid = !field.checkValidity();
+
+          field.classList.toggle('is-invalid', invalid);
+          error.textContent = invalid ? labels[id] : '';
+          valid = valid && !invalid;
+        });
+
+        success.textContent = valid ? 'Thank you. Your message has been received.' : '';
+      });
+
+      const revealItems = document.querySelectorAll('.reveal-on-scroll');
+      if ('IntersectionObserver' in window) {
+        const observer = new IntersectionObserver(function(entries){
+          entries.forEach(function(entry){
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.16 });
+
+        revealItems.forEach(function(item){
+          observer.observe(item);
+        });
+      } else {
+        revealItems.forEach(function(item){
+          item.classList.add('is-visible');
+        });
+      }
+    })();
+  </script>
+  <script src="chatbot.js"></script>
+</body>
+</html>

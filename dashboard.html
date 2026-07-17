@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DentaCare Dashboard</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+          rel="stylesheet">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <img src="images/DentaCare logo1.png">
+        </div>
+
+        <ul class="sidebar-menu">
+
+            <li class="active">
+                <a href="#" data-dashboard-link>
+                    <i class="fa-solid fa-house"></i>
+                    <span>Dashboard</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="sidebarProfile">
+                    <i class="fa-solid fa-user"></i>
+                    <span>Profile</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="sidebarAppointments">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>Appointments</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="sidebarHistory">
+                    <i class="fa-solid fa-clock-rotate-left"></i>
+                    <span>History</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="sidebarSettings">
+                    <i class="fa-solid fa-gear"></i>
+                    <span>Settings</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="#" id="sidebarAccessibility">
+                    <i class="fa-solid fa-universal-access"></i>
+                    <span>Accessibility</span>
+                </a>
+            </li>
+
+            <li class="logout">
+                <a href="#" id="logoutBtn">
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span>Logout</span>
+                </a>
+            </li>
+
+        </ul>
+
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+
+            <div class="top-right">
+
+                <button class="theme-btn" id="themeToggle" type="button" aria-label="Switch dark mode">
+                    <i class="fa-solid fa-sun"></i>
+                </button>
+
+                <button class="theme-btn">
+                    <i class="fa-solid fa-bell"></i>
+                </button>
+
+                <div class="user-profile">
+
+                    <div class="profile-circle">
+                        JD
+                    </div>
+
+                    <div class="user-details">
+                        <h4 id="userName">
+                            John Doe
+                        </h4>
+
+                        <span>
+                            Patient
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <!-- Welcome -->
+        <section class="welcome">
+
+            <h1>
+                Welcome back,
+                <span id="welcomeName">
+                    John
+                </span>
+            </h1>
+
+            <p>
+                Your dental care journey starts here.
+            </p>
+
+        </section>
+
+
+        <!-- Appointment Card -->
+        <section class="appointment-card">
+
+            <div class="card-header">
+
+                <div>
+                    <h3>Upcoming Appointment</h3>
+                    <p>Next scheduled visit</p>
+                </div>
+
+                <span class="status">
+                    Confirm
+                </span>
+
+            </div>
+
+
+            <div class="appointment-details">
+
+                <div class="detail">
+
+                    <i class="fa-solid fa-calendar"></i>
+
+                    <div>
+                        <small>Date</small>
+                        <h4>May 15, 2026</h4>
+                    </div>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    <div>
+                        <small>Time</small>
+                        <h4>10:30 AM</h4>
+                    </div>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <i class="fa-solid fa-user-doctor"></i>
+
+                    <div>
+                        <small>Dentist</small>
+                        <h4>Dr. Sarah Johnson</h4>
+                    </div>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <i class="fa-solid fa-file-medical"></i>
+
+                    <div>
+                        <small>Service</small>
+                        <h4>Teeth Cleaning</h4>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="appointment-buttons">
+
+                <button class="view-btn">
+                    View Details
+                </button>
+
+                <button class="reschedule-btn">
+                    Reschedule
+                </button>
+
+                <button class="cancel-btn">
+                    Cancel
+                </button>
+
+            </div>
+
+        </section>
+
+        <section class="bookings-section" id="dashboardBookingsSection">
+            <div class="bookings-header">
+                <div>
+                    <h2>Your Bookings</h2>
+                    <p>Confirmed appointment requests appear here.</p>
+                </div>
+                <button class="book-appointment-btn" type="button">Book Appointment</button>
+            </div>
+            <div class="bookings-list" id="dashboardBookingsList">
+                <p class="empty-bookings">No bookings yet.</p>
+            </div>
+        </section>
+
+
+        <!-- Quick Actions -->
+        <section class="quick-actions">
+
+            <h2>
+                Quick Actions
+            </h2>
+
+            <div class="action-grid">
+
+                <div class="action-card">
+
+                    <i class="fa-solid fa-calendar-plus"></i>
+
+                    <h4>
+                        Book Appointment
+                    </h4>
+
+                </div>
+
+
+                <div class="action-card">
+
+                    <i class="fa-solid fa-clipboard-list"></i>
+
+                    <h4>
+                        View Appointment
+                    </h4>
+
+                </div>
+
+
+                <div class="action-card">
+
+                    <i class="fa-solid fa-pen-to-square"></i>
+
+                    <h4>
+                        Update Profile
+                    </h4>
+
+                </div>
+
+
+                <div class="action-card">
+
+                    <i class="fa-solid fa-phone"></i>
+
+                    <h4>
+                        Contact Clinic
+                    </h4>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <section class="profile-view" id="profileView" hidden>
+            <div class="profile-heading">
+                <h1>My Profile</h1>
+                <p>Manage your personal information, medical history, and account security.</p>
+            </div>
+
+            <div class="profile-summary-card">
+                <div class="profile-summary-top">
+                    <div class="profile-avatar-wrap">
+                        <div class="profile-avatar" id="profileAvatar">JD</div>
+                        <button class="profile-camera" type="button" aria-label="Update profile photo">
+                            <i class="fa-solid fa-camera"></i>
+                        </button>
+                    </div>
+                    <div class="profile-summary-info">
+                        <div class="profile-name-row">
+                            <h2 id="profileHeaderName">John Doe</h2>
+                            <span><i class="fa-solid fa-check"></i> Verified Patient</span>
+                        </div>
+                        <div class="profile-contact-row">
+                            <span><i class="fa-regular fa-envelope"></i> <b id="profileHeaderEmail">john.doe@email.com</b></span>
+                            <span><i class="fa-solid fa-phone"></i> <b id="profileHeaderPhone">(555) 123-4567</b></span>
+                            <span><i class="fa-solid fa-location-dot"></i> <b id="profileHeaderLocation">San Francisco, CA</b></span>
+                        </div>
+                    </div>
+                    <button class="profile-edit-btn" id="editProfileBtn" type="button">
+                        <i class="fa-regular fa-pen-to-square"></i> Edit Profile
+                    </button>
+                </div>
+
+                <div class="profile-stats">
+                    <div><i class="fa-solid fa-v"></i><span>Total Visits</span><strong id="profileTotalVisits">0</strong></div>
+                    <div><i class="fa-regular fa-calendar"></i><span>Next Appointment</span><strong id="profileNextAppointment">None</strong></div>
+                    <div><i class="fa-regular fa-star"></i><span>Member Since</span><strong id="profileMemberSince">2026</strong></div>
+                    <div><i class="fa-regular fa-clipboard"></i><span>Patient ID</span><strong id="profilePatientId">#BDC2026</strong></div>
+                </div>
+            </div>
+
+            <div class="profile-details-card">
+                <div class="profile-tabs" role="tablist" aria-label="Profile sections">
+                    <button class="profile-tab is-active" type="button" data-profile-tab="personal">Personal Info</button>
+                    <button class="profile-tab" type="button" data-profile-tab="medical">Medical History</button>
+                    <button class="profile-tab" type="button" data-profile-tab="insurance">Insurance</button>
+                    <button class="profile-tab" type="button" data-profile-tab="security">Security</button>
+                </div>
+
+                <form class="profile-panel is-active" id="personalProfileForm" data-profile-panel="personal">
+                    <h3>Basic Details</h3>
+                    <div class="profile-form-grid">
+                        <label>First Name<input id="profileFirstName" name="firstName" type="text" disabled></label>
+                        <label>Last Name<input id="profileLastName" name="lastName" type="text" disabled></label>
+                        <label>Email Address<input id="profileEmail" name="email" type="email" disabled></label>
+                        <label>Phone Number<input id="profilePhone" name="phone" type="tel" disabled></label>
+                        <label>Date of Birth<input id="profileDateOfBirth" name="dateOfBirth" type="date" disabled></label>
+                        <label>Gender<select id="profileGender" name="gender" disabled><option value="">Select gender</option><option>Female</option><option>Male</option><option>Other</option><option>Prefer not to say</option></select></label>
+                    </div>
+
+                    <h3>Address</h3>
+                    <div class="profile-form-grid">
+                        <label class="profile-wide">Street Address<input id="profileStreet" name="street" type="text" disabled></label>
+                        <label>City<input id="profileCity" name="city" type="text" disabled></label>
+                        <label>State<input id="profileState" name="state" type="text" disabled></label>
+                        <label>Zip Code<input id="profileZip" name="zipCode" type="text" disabled></label>
+                    </div>
+
+                    <h3>Preferences</h3>
+                    <div class="profile-form-grid">
+                        <label>Preferred Contact Method<select id="profileContactMethod" name="preferredContactMethod" disabled><option>Email</option><option>Phone</option><option>SMS</option></select></label>
+                    </div>
+                </form>
+
+                <form class="profile-panel" id="medicalProfileForm" data-profile-panel="medical">
+                    <h3>Medical History</h3>
+                    <div class="profile-form-grid">
+                        <label>Allergies<textarea id="profileAllergies" name="allergies" disabled></textarea></label>
+                        <label>Current Medication<textarea id="profileMedication" name="medication" disabled></textarea></label>
+                        <label>Medical Conditions<textarea id="profileConditions" name="conditions" disabled></textarea></label>
+                        <label>Dental Concerns<textarea id="profileDentalConcerns" name="dentalConcerns" disabled></textarea></label>
+                    </div>
+                </form>
+
+                <form class="profile-panel" id="insuranceProfileForm" data-profile-panel="insurance">
+                    <h3>Insurance</h3>
+                    <div class="profile-form-grid">
+                        <label>Provider<input id="profileInsuranceProvider" name="insuranceProvider" type="text" disabled></label>
+                        <label>Policy Number<input id="profilePolicyNumber" name="policyNumber" type="text" disabled></label>
+                        <label>Group Number<input id="profileGroupNumber" name="groupNumber" type="text" disabled></label>
+                        <label>Primary Holder<input id="profilePrimaryHolder" name="primaryHolder" type="text" disabled></label>
+                    </div>
+                </form>
+
+                <div class="profile-panel" data-profile-panel="security">
+                    <h3>Security</h3>
+                    <div class="security-actions">
+                        <div>
+                            <strong>Password Reset</strong>
+                            <p>Send a secure password reset link to your email address.</p>
+                        </div>
+                        <button class="profile-save-btn" id="sendPasswordResetBtn" type="button">Send Reset Email</button>
+                    </div>
+                </div>
+
+                <p class="profile-status" id="profileMessage" role="status" aria-live="polite"></p>
+                <div class="profile-actions" id="profileActions" hidden>
+                    <button class="profile-cancel-btn" id="cancelProfileBtn" type="button">Cancel</button>
+                    <button class="profile-save-btn" id="saveProfileBtn" type="button">Save Changes</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="history-view" id="historyView" hidden>
+            <div class="history-heading">
+                <div>
+                    <h1>My Appointments</h1>
+                    <p>Manage your dental appointments</p>
+                </div>
+                <button class="book-appointment-btn" type="button">+ Book Appointment</button>
+            </div>
+
+            <div class="history-tabs" role="tablist" aria-label="Appointment history">
+                <button class="history-tab is-active" type="button" data-history-tab="upcoming">Upcoming <span id="historyUpcomingCount">(0)</span></button>
+                <button class="history-tab" type="button" data-history-tab="previous">History <span id="historyPreviousCount">(0)</span></button>
+            </div>
+
+            <div class="history-tools">
+                <label class="history-search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input id="historySearch" type="search" placeholder="Search appointments....">
+                </label>
+                <button class="history-filter" id="historyFilterBtn" type="button">
+                    <i class="fa-solid fa-filter"></i> Filter
+                </button>
+            </div>
+
+            <div class="history-list is-active" id="historyUpcomingList" data-history-panel="upcoming">
+                <p class="empty-bookings">No upcoming appointments.</p>
+            </div>
+            <div class="history-list" id="historyPreviousList" data-history-panel="previous">
+                <p class="empty-bookings">No previous bookings.</p>
+            </div>
+        </section>
+
+        <section class="accessibility-view" id="accessibilityView" hidden>
+            <div class="accessibility-heading">
+                <h1>Accessibility Settings</h1>
+                <p>Customize your experience for better accessibility</p>
+            </div>
+
+            <div class="accessibility-alert">
+                <i class="fa-solid fa-circle-info"></i>
+                <div>
+                    <strong>WCAG 2.1 Level AA Compliance</strong>
+                    <p>This application is designed to meet Web Content Accessibility Guidelines (WCAG) 2.1 Level AA standards. We are committed to providing an inclusive experience for all users, including those with visual, auditory, motor, or cognitive disabilities.</p>
+                </div>
+            </div>
+
+            <div class="accessibility-card">
+                <h2><i class="fa-regular fa-eye"></i> Visual Accessibility</h2>
+                <label class="accessibility-label">Text Size</label>
+                <div class="accessibility-segment" role="group" aria-label="Text size">
+                    <button type="button" data-accessibility-text="small"><i class="fa-solid fa-t"></i> Small</button>
+                    <button class="is-active" type="button" data-accessibility-text="medium"><i class="fa-solid fa-t"></i> Medium</button>
+                    <button type="button" data-accessibility-text="large"><i class="fa-solid fa-t"></i> Large</button>
+                </div>
+                <div class="accessibility-row">
+                    <span><i class="fa-solid fa-circle-half-stroke"></i></span>
+                    <div><strong>High Contrast Mode</strong><small>Increase contrast for better visibility</small></div>
+                    <label class="switch"><input id="accessHighContrast" type="checkbox"><span></span></label>
+                </div>
+                <label class="accessibility-field">Line Height<select id="accessLineHeight"><option value="normal">Normal (1.6)</option><option value="relaxed">Relaxed (1.8)</option><option value="wide">Wide (2.0)</option></select></label>
+                <label class="accessibility-field">Letter Spacing<select id="accessLetterSpacing"><option value="normal">Normal</option><option value="wide">Wide</option><option value="wider">Extra Wide</option></select></label>
+                <label class="accessibility-field">Color Blind Mode<select id="accessColorBlind"><option value="none">None</option><option value="protanopia">Protanopia</option><option value="deuteranopia">Deuteranopia</option><option value="tritanopia">Tritanopia</option><option value="grayscale">Grayscale</option></select></label>
+                <div class="accessibility-row">
+                    <span><i class="fa-solid fa-underline"></i></span>
+                    <div><strong>Underline Links</strong><small>Always underline clickable links</small></div>
+                    <label class="switch"><input id="accessUnderlineLinks" type="checkbox"><span></span></label>
+                </div>
+            </div>
+
+            <div class="accessibility-card">
+                <h2><i class="fa-solid fa-volume-high"></i> Screen Reader &amp; Audio</h2>
+                <div class="accessibility-row">
+                    <span><i class="fa-solid fa-volume-high"></i></span>
+                    <div><strong>Screen Reader Support</strong><small>Enable enhanced screen reader compatibility</small></div>
+                    <label class="switch"><input id="accessScreenReader" type="checkbox"><span></span></label>
+                </div>
+                <div class="accessibility-row">
+                    <span><i class="fa-solid fa-play"></i></span>
+                    <div><strong>Auto-play Videos</strong><small>Automatically play videos when visible</small></div>
+                    <label class="switch"><input id="accessAutoplayVideos" type="checkbox"><span></span></label>
+                </div>
+                <div class="accessibility-row">
+                    <span><i class="fa-regular fa-closed-captioning"></i></span>
+                    <div><strong>Show Captions</strong><small>Display captions for video content</small></div>
+                    <label class="switch"><input id="accessCaptions" type="checkbox" checked><span></span></label>
+                </div>
+            </div>
+
+            <div class="accessibility-card">
+                <h2><i class="fa-regular fa-keyboard"></i> Keyboard &amp; Navigation</h2>
+                <div class="accessibility-row">
+                    <span><i class="fa-regular fa-keyboard"></i></span>
+                    <div><strong>Keyboard Navigation</strong><small>Navigate using keyboard shortcuts</small></div>
+                    <label class="switch"><input id="accessKeyboardNav" type="checkbox" checked><span></span></label>
+                </div>
+                <div class="accessibility-row">
+                    <span><i class="fa-regular fa-square"></i></span>
+                    <div><strong>Focus Indicators</strong><small>Show clear focus outlines on elements</small></div>
+                    <label class="switch"><input id="accessFocusIndicators" type="checkbox" checked><span></span></label>
+                </div>
+                <label class="accessibility-field">Cursor Size<select id="accessCursorSize"><option value="medium">Medium (Default)</option><option value="large">Large</option><option value="extra-large">Extra Large</option></select></label>
+            </div>
+
+            <div class="accessibility-card">
+                <h2><i class="fa-solid fa-bolt"></i> Motion &amp; Animation</h2>
+                <div class="accessibility-row">
+                    <span><i class="fa-solid fa-person-walking"></i></span>
+                    <div><strong>Reduce Motion</strong><small>Limit animations and motion effects</small></div>
+                    <label class="switch"><input id="accessReduceMotion" type="checkbox"><span></span></label>
+                </div>
+                <div class="accessibility-row">
+                    <span><i class="fa-solid fa-wand-magic-sparkles"></i></span>
+                    <div><strong>Smooth Scrolling</strong><small>Use smooth movement when jumping between sections</small></div>
+                    <label class="switch"><input id="accessSmoothScroll" type="checkbox" checked><span></span></label>
+                </div>
+            </div>
+
+            <p class="accessibility-status" id="accessibilityMessage" role="status" aria-live="polite"></p>
+            <button class="accessibility-save-floating" id="saveAccessibilityBtn" type="button"><i class="fa-regular fa-floppy-disk"></i> Save Changes</button>
+        </section>
+
+        <section class="settings-view" id="settingsView" hidden>
+            <div class="settings-heading">
+                <h1>Settings</h1>
+                <p>Manage your account preferences, notifications, and privacy controls.</p>
+            </div>
+
+            <div class="settings-layout">
+                <aside class="settings-menu" aria-label="Settings categories">
+                    <button class="settings-menu-item is-active" type="button" data-settings-tab="general">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span><strong>General</strong><small>Language, timezone, and forms</small></span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <button class="settings-menu-item" type="button" data-settings-tab="notifications">
+                        <i class="fa-regular fa-bell"></i>
+                        <span><strong>Notifications</strong><small>Channels and event types</small></span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <button class="settings-menu-item" type="button" data-settings-tab="appearance">
+                        <i class="fa-solid fa-palette"></i>
+                        <span><strong>Appearance</strong><small>Theme, density, animations</small></span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <button class="settings-menu-item" type="button" data-settings-tab="privacy">
+                        <i class="fa-solid fa-shield-halved"></i>
+                        <span><strong>Security &amp; Privacy</strong><small>Password, sessions, privacy</small></span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                    <button class="settings-menu-item" type="button" data-settings-tab="billing">
+                        <i class="fa-regular fa-credit-card"></i>
+                        <span><strong>Billing &amp; Payments</strong><small>Cards, invoices, autopay</small></span>
+                        <i class="fa-solid fa-chevron-right"></i>
+                    </button>
+                </aside>
+
+                <div class="settings-content">
+                    <div class="settings-panel is-active" data-settings-panel="general">
+                        <div class="settings-card">
+                            <h2>Language &amp; Region</h2>
+                            <div class="settings-grid">
+                                <label>Language<select id="settingLanguage"><option>English (US)</option><option>English (UK)</option><option>isiZulu</option><option>Afrikaans</option></select></label>
+                                <label>Timezone<select id="settingTimezone"><option>Pacific Time (PT)</option><option>South Africa Standard Time (SAST)</option><option>Eastern Time (ET)</option><option>Central European Time (CET)</option></select></label>
+                                <label>Date Format<select id="settingDateFormat"><option>MM/DD/YYYY</option><option>DD/MM/YYYY</option><option>YYYY-MM-DD</option></select></label>
+                            </div>
+                        </div>
+                        <div class="settings-card">
+                            <h2>Preferences</h2>
+                            <div class="setting-row">
+                                <span><i class="fa-regular fa-floppy-disk"></i></span>
+                                <div><strong>Auto-save Forms</strong><small>Automatically save form progress while editing</small></div>
+                                <label class="switch"><input id="settingAutoSave" type="checkbox" checked><span></span></label>
+                            </div>
+                            <div class="setting-row">
+                                <span><i class="fa-solid fa-shield-halved"></i></span>
+                                <div><strong>Anonymous Data Sharing</strong><small>Help improve the portal by sharing usage analytics</small></div>
+                                <label class="switch"><input id="settingDataSharing" type="checkbox"><span></span></label>
+                            </div>
+                        </div>
+                        <div class="settings-card">
+                            <h2>Your Data</h2>
+                            <p>Export or delete a copy of your personal data stored with us.</p>
+                            <div class="settings-actions-row">
+                                <button class="settings-outline-btn" id="downloadDataBtn" type="button"><i class="fa-solid fa-download"></i> Download My Data</button>
+                                <button class="settings-danger-btn" id="requestDeletionBtn" type="button"><i class="fa-regular fa-trash-can"></i> Request Deletion</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-panel" data-settings-panel="notifications">
+                        <div class="settings-card">
+                            <h2>Notification Channels</h2>
+                            <div class="setting-row"><span><i class="fa-regular fa-envelope"></i></span><div><strong>Email Notifications</strong><small>Appointment confirmations and updates</small></div><label class="switch"><input id="settingEmailNotifications" type="checkbox" checked><span></span></label></div>
+                            <div class="setting-row"><span><i class="fa-solid fa-mobile-screen"></i></span><div><strong>SMS Reminders</strong><small>Text reminders before appointments</small></div><label class="switch"><input id="settingSmsReminders" type="checkbox"><span></span></label></div>
+                            <div class="setting-row"><span><i class="fa-regular fa-calendar-check"></i></span><div><strong>Appointment Reminders</strong><small>Notify me 24 hours before visits</small></div><label class="switch"><input id="settingAppointmentReminders" type="checkbox" checked><span></span></label></div>
+                        </div>
+                    </div>
+
+                    <div class="settings-panel" data-settings-panel="appearance">
+                        <div class="settings-card">
+                            <h2>Appearance</h2>
+                            <div class="settings-grid">
+                                <label>Theme<select id="settingTheme"><option value="light">Light</option><option value="dark">Dark</option><option value="system">System</option></select></label>
+                                <label>Interface Density<select id="settingDensity"><option>Comfortable</option><option>Compact</option></select></label>
+                            </div>
+                            <div class="setting-row"><span><i class="fa-solid fa-wand-magic-sparkles"></i></span><div><strong>Interface Animations</strong><small>Use subtle motion throughout the portal</small></div><label class="switch"><input id="settingAnimations" type="checkbox" checked><span></span></label></div>
+                        </div>
+                    </div>
+
+                    <div class="settings-panel" data-settings-panel="privacy">
+                        <div class="settings-card">
+                            <h2>Security &amp; Privacy</h2>
+                            <div class="setting-row"><span><i class="fa-solid fa-lock"></i></span><div><strong>Password Reset</strong><small>Send a secure reset link to your email</small></div><button class="settings-outline-btn" id="settingsPasswordResetBtn" type="button">Send Link</button></div>
+                            <div class="setting-row"><span><i class="fa-solid fa-user-shield"></i></span><div><strong>Private Profile</strong><small>Hide optional profile details from shared views</small></div><label class="switch"><input id="settingPrivateProfile" type="checkbox"><span></span></label></div>
+                            <div class="setting-row"><span><i class="fa-solid fa-right-from-bracket"></i></span><div><strong>End Current Session</strong><small>Sign out of this device immediately</small></div><button class="settings-danger-btn" id="settingsSignOutBtn" type="button">Sign Out</button></div>
+                        </div>
+                    </div>
+
+                    <div class="settings-panel" data-settings-panel="billing">
+                        <div class="settings-card">
+                            <h2>Billing &amp; Payments</h2>
+                            <div class="settings-grid">
+                                <label>Payment Method<input id="settingPaymentMethod" type="text" placeholder="No card on file"></label>
+                                <label>Billing Email<input id="settingBillingEmail" type="email" placeholder="billing@example.com"></label>
+                            </div>
+                            <div class="setting-row"><span><i class="fa-regular fa-credit-card"></i></span><div><strong>Automatic Payments</strong><small>Use saved payment details for future visits</small></div><label class="switch"><input id="settingAutoPay" type="checkbox"><span></span></label></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <p class="settings-status" id="settingsMessage" role="status" aria-live="polite"></p>
+            <button class="settings-save-floating" id="saveSettingsBtn" type="button"><i class="fa-regular fa-floppy-disk"></i> Save Changes</button>
+        </section>
+
+        <section class="booking-flow" id="bookingFlow" aria-labelledby="bookingTitle" hidden>
+            <div class="booking-heading">
+                <h1 id="bookingTitle">Book an Appointment</h1>
+                <p>Schedule your visit in just a few steps.</p>
+            </div>
+
+            <div class="appointments-overview" id="appointmentsOverview">
+                <div class="bookings-header">
+                    <div>
+                        <h2>Appointments</h2>
+                        <p>Your latest booking requests.</p>
+                    </div>
+                    <button class="book-appointment-btn" type="button">Book Appointment</button>
+                </div>
+                <div class="bookings-list" id="appointmentsBookingsList">
+                    <p class="empty-bookings">No bookings yet.</p>
+                </div>
+            </div>
+
+            <div class="booking-stepper" aria-label="Booking steps">
+                <div class="booking-step is-active" data-step-indicator="1">
+                    <span>1</span>
+                    <small>Service</small>
+                </div>
+                <div class="booking-step" data-step-indicator="2">
+                    <span>2</span>
+                    <small>Dentist</small>
+                </div>
+                <div class="booking-step" data-step-indicator="3">
+                    <span>3</span>
+                    <small>Date &amp; Time</small>
+                </div>
+                <div class="booking-step" data-step-indicator="4">
+                    <span>4</span>
+                    <small>Confirm</small>
+                </div>
+            </div>
+
+            <div class="booking-panel">
+                <div class="booking-page is-active" data-booking-page="1">
+                    <h2>Select a Service</h2>
+                    <p>Choose the type of dental treatment you need.</p>
+                    <div class="booking-card-grid service-options">
+                        <button class="booking-option is-selected" type="button" data-service="Teeth Cleaning" data-duration="45 min">
+                            <span class="option-badge">Popular</span>
+                            <i class="fa-solid fa-stethoscope"></i>
+                            <strong>Teeth Cleaning</strong>
+                            <em>Professional cleaning to maintain oral hygiene and remove plaque buildup.</em>
+                            <small><i class="fa-regular fa-clock"></i> 45 min</small>
+                        </button>
+                        <button class="booking-option" type="button" data-service="Fillings" data-duration="60 min">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <strong>Fillings</strong>
+                            <em>Restorative treatment for cavities using durable tooth-colored fillings.</em>
+                            <small><i class="fa-regular fa-clock"></i> 60 min</small>
+                        </button>
+                        <button class="booking-option" type="button" data-service="Teeth Whitening" data-duration="90 min">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                            <strong>Teeth Whitening</strong>
+                            <em>Achieve a brighter smile with professional whitening treatments.</em>
+                            <small><i class="fa-regular fa-clock"></i> 90 min</small>
+                        </button>
+                        <button class="booking-option" type="button" data-service="Tooth Extraction" data-duration="75 min">
+                            <i class="fa-solid fa-shield-halved"></i>
+                            <strong>Tooth Extraction</strong>
+                            <em>Safe and gentle removal of problematic or damaged teeth.</em>
+                            <small><i class="fa-regular fa-clock"></i> 75 min</small>
+                        </button>
+                        <button class="booking-option" type="button" data-service="Root Canal" data-duration="120 min">
+                            <i class="fa-solid fa-bolt"></i>
+                            <strong>Root Canal</strong>
+                            <em>Treatment for infected tooth pulp to save and restore natural teeth.</em>
+                            <small><i class="fa-regular fa-clock"></i> 120 min</small>
+                        </button>
+                        <button class="booking-option" type="button" data-service="Dental Implants" data-duration="Varies">
+                            <i class="fa-solid fa-tooth"></i>
+                            <strong>Dental Implants</strong>
+                            <em>Permanent solution for replacing missing teeth and restoring confidence.</em>
+                            <small><i class="fa-regular fa-clock"></i> Varies</small>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="booking-page" data-booking-page="2">
+                    <h2>Choose a Dentist</h2>
+                    <p>Select the dentist you would like to visit.</p>
+                    <div class="booking-card-grid dentist-options">
+                        <button class="booking-option dentist-option is-selected" type="button" data-dentist="Dr. Sarah Johnson">
+                            <i class="fa-solid fa-user-doctor"></i>
+                            <strong>Dr. Sarah Johnson</strong>
+                            <em>General dentistry and preventive care.</em>
+                            <small>Available weekdays <b>4.9</b></small>
+                        </button>
+                        <button class="booking-option dentist-option" type="button" data-dentist="Dr. Michael Chen">
+                            <i class="fa-solid fa-user-doctor"></i>
+                            <strong>Dr. Michael Chen</strong>
+                            <em>Cosmetic dentistry and restorations.</em>
+                            <small>Available Mon, Wed, Fri <b>4.8</b></small>
+                        </button>
+                        <button class="booking-option dentist-option" type="button" data-dentist="Dr. Alice Muhad">
+                            <i class="fa-solid fa-user-doctor"></i>
+                            <strong>Dr. Alice Muhad</strong>
+                            <em>Orthodontics and patient care planning.</em>
+                            <small>Available Tue, Thu <b>4.9</b></small>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="booking-page" data-booking-page="3">
+                    <h2>Select Date &amp; Time</h2>
+                    <p>Pick the appointment slot that works best for you.</p>
+                    <div class="date-time-grid">
+                        <label class="date-field">
+                            Date
+                            <input id="appointmentDate" type="date" value="2026-07-13">
+                        </label>
+                        <div class="time-slots" aria-label="Available times">
+                            <button class="time-slot is-selected" type="button" data-time="09:00 AM">09:00 AM</button>
+                            <button class="time-slot" type="button" data-time="10:30 AM">10:30 AM</button>
+                            <button class="time-slot" type="button" data-time="12:00 PM">12:00 PM</button>
+                            <button class="time-slot" type="button" data-time="02:30 PM">02:30 PM</button>
+                            <button class="time-slot" type="button" data-time="04:00 PM">04:00 PM</button>
+                            <button class="time-slot" type="button" data-time="05:30 PM">05:30 PM</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="booking-page" data-booking-page="4">
+                    <h2>Confirm Appointment</h2>
+                    <p>Review your booking details before confirming.</p>
+                    <div class="confirm-card">
+                        <div><span>Service</span><strong id="confirmService">Teeth Cleaning</strong></div>
+                        <div><span>Dentist</span><strong id="confirmDentist">Dr. Sarah Johnson</strong></div>
+                        <div><span>Date</span><strong id="confirmDate">2026-07-13</strong></div>
+                        <div><span>Time</span><strong id="confirmTime">09:00 AM</strong></div>
+                        <div><span>Duration</span><strong id="confirmDuration">45 min</strong></div>
+                    </div>
+                    <p class="booking-confirmation" id="bookingConfirmation" role="status" aria-live="polite"></p>
+                </div>
+
+                <div class="booking-nav">
+                    <button class="booking-prev" type="button"><i class="fa-solid fa-arrow-left"></i> Previous</button>
+                    <span id="bookingStepText">Step 1 of 4</span>
+                    <button class="booking-next" type="button">Next <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+</div>
+
+<!-- Firebase -->
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+<script src="auth.js"></script>
+<script src="chatbot.js"></script>
+
+</body>
+</html>
+
