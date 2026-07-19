@@ -133,9 +133,18 @@
 
   function init() {
     if (window.firebase && firebase.auth) {
-      firebase.auth().onAuthStateChanged(function(user) {
-        isLoggedIn = Boolean(user);
-      });
+      try {
+        firebase.auth().onAuthStateChanged(function(user) {
+          isLoggedIn = Boolean(user);
+        });
+      }
+      catch (error) {
+        console.warn("Firebase auth is not available. Using the local chatbot experience instead.", error);
+        isLoggedIn = true;
+      }
+    }
+    else {
+      isLoggedIn = true;
     }
     createWidget();
   }

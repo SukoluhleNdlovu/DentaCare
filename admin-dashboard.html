@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+        Admin Dashboard - DentaCare Dental Management System
+    </title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="admin-dashboard-body">
+<div class="admin-dashboard-layout">
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar">
+        <div class="admin-brand">
+            <img 
+            src="images/DentaCare logo1.png"
+            alt="DentaCare Logo"
+            >
+            <h2>
+                DentaCare
+            </h2>
+        </div>
+
+        <nav class="admin-navigation">
+            <a href="admin-dashboard.html"
+               class="active">
+                <span>📊</span>
+                Dashboard
+            </a>
+
+            <a href="manage-administrators.html"
+               data-permission="manageAdministrators">
+
+                <span>👤</span>
+                Administrators
+
+            </a>
+
+            <a href="manage-dentists.html"
+               data-permission="manageDentists">
+
+                <span>🦷</span>
+                Dentists
+
+            </a>
+
+            <a href="manage-patients.html"
+               data-permission="managePatients">
+
+                <span>👥</span>
+                Patients
+
+            </a>
+
+            <a href="clinic-settings.html"
+               data-permission="clinicSettings">
+                <span>⚙️</span>
+                Clinic Settings
+            </a>
+
+            <a href="reports.html"
+               data-permission="reports">
+                <span>📈</span>
+                Reports
+            </a>
+
+            <a href="security-settings.html"
+               data-permission="securitySettings">
+                <span>🔐</span>
+                Security
+            </a>
+        </nav>
+
+        <button 
+        id="adminDashboardSignOut"
+        class="admin-sidebar-signout">
+            🚪 Sign Out
+        </button>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-dashboard-main">
+        <header class="admin-dashboard-header">
+            <div>
+                <p class="admin-dashboard-kicker">
+                    Authorized Personnel Only
+                </p>
+                <h1 id="adminDashboardTitle">
+                    Admin Dashboard
+                </h1>
+
+                <p id="adminDashboardStatus">
+                    Verifying administrator permissions...
+                </p>
+            </div>
+
+            <div class="admin-profile-card">
+                <div class="admin-avatar">
+                    👨‍💼
+                </div>
+                <div>
+                    <strong id="adminName">
+                        Administrator
+                    </strong>
+
+                    <small id="adminRole">
+                        Super Admin
+                    </small>
+                </div>
+            </div>
+        </header>
+
+        <!-- STATISTICS CARDS -->
+
+
+        <section class="dashboard-statistics">
+
+
+
+            <div class="dashboard-card">
+
+
+                <h3>
+                    Total Patients
+                </h3>
+
+
+                <p id="totalPatients">
+                    0
+                </p>
+
+
+            </div>
+
+
+
+
+            <div class="dashboard-card">
+
+
+                <h3>
+                    Dentists
+                </h3>
+
+
+                <p id="totalDentists">
+                    0
+                </p>
+
+
+            </div>
+
+
+
+
+
+            <div class="dashboard-card">
+
+
+                <h3>
+                    Appointments Today
+                </h3>
+
+
+                <p id="todayAppointments">
+                    0
+                </p>
+
+
+            </div>
+
+
+
+
+
+            <div class="dashboard-card">
+
+
+                <h3>
+                    Reports Generated
+                </h3>
+
+
+                <p id="totalReports">
+                    0
+                </p>
+
+
+            </div>
+
+
+
+        </section>
+
+
+
+
+
+
+
+        <!-- QUICK ACTIONS -->
+
+
+        <section class="dashboard-section">
+
+
+            <h2>
+                Quick Actions
+            </h2>
+
+
+
+            <div class="dashboard-actions">
+
+
+                <button data-permission="managePatients">
+
+                    ➕ Add Patient
+
+                </button>
+
+
+
+                <button data-permission="manageDentists">
+
+                    🦷 Add Dentist
+
+                </button>
+
+
+
+
+                <button data-permission="manageAdministrators">
+
+                    👤 Create Admin
+
+                </button>
+
+
+
+
+                <button data-permission="reports">
+
+                    📊 Generate Report
+
+                </button>
+
+
+
+            </div>
+
+
+        </section>
+
+
+
+
+
+
+
+        <!-- RECENT ACTIVITY -->
+
+
+        <section class="dashboard-section">
+
+
+            <h2>
+                Recent Activity
+            </h2>
+
+
+
+            <div 
+            id="recentActivity"
+            class="activity-container">
+
+
+                <p>
+                    Loading activity...
+                </p>
+
+
+            </div>
+
+
+        </section>
+
+
+
+    </main>
+
+
+
+</div>
+
+
+
+
+
+
+
+<!-- FIREBASE -->
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+
+
+<script src="firebase-config.js"></script>
+
+<script src="auth.js"></script>
+
+<script src="admin-dashboard.js"></script>
+
+
+
+</body>
+
+</html>

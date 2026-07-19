@@ -2,7 +2,7 @@
 // FIREBASE CONFIGURATION
 // =========================
 
-const firebaseConfig = {
+const defaultFirebaseConfig = {
     apiKey: "AIzaSyCkm0gUQtHKcZluqp6voNw3R4cjQU1gJmQ",
     authDomain: "dentacare-d6b8d.firebaseapp.com",
     projectId: "dentacare-d6b8d",
@@ -12,25 +12,47 @@ const firebaseConfig = {
     measurementId: "G-KBGRW2Q812"
 };
 
+const firebaseConfig = window.DENTACARE_FIREBASE_CONFIG || defaultFirebaseConfig;
 const DENTACARE_EMAIL_API_URL = window.DENTACARE_EMAIL_API_URL || "http://localhost:3000";
+const hasFirebaseConfig = Boolean(
+    firebaseConfig &&
+    firebaseConfig.apiKey &&
+    firebaseConfig.projectId &&
+    !String(firebaseConfig.apiKey).includes("YOUR_") &&
+    !String(firebaseConfig.apiKey).includes("example")
+);
+
+var auth = null;
+var db = null;
+var currentDashboardUser = null;
+var currentProfileData = {};
+var currentBookings = [];
+var isProfileLoaded = false;
 
 if (typeof firebase === "undefined") {
-    console.error("Firebase SDK scripts must be loaded before auth.js.");
+    console.warn("Firebase SDK scripts must be loaded before auth.js. Auth features will remain disabled until a valid config is provided.");
+}
+else if (!hasFirebaseConfig) {
+    console.warn("Firebase is not configured with a valid API key. Auth features are disabled in local mode.");
 }
 else {
-    if (!firebase.apps.length) {
-        firebase.initializeApp(firebaseConfig);
+    try {
+        if (!firebase.apps.length) {
+            firebase.initializeApp(firebaseConfig);
+        }
+
+        auth = firebase.auth();
+        db = firebase.firestore ? firebase.firestore() : null;
     }
+    catch (error) {
+        console.warn("Firebase could not be initialized. Continuing in local mode.", error);
+    }
+}
 
-    var auth = firebase.auth();
-    var db = firebase.firestore ? firebase.firestore() : null;
-    var currentDashboardUser = null;
-    var currentProfileData = {};
-    var currentBookings = [];
-    var isProfileLoaded = false;
+initPasswordToggles();
+initPasswordStrength();
 
-    initPasswordToggles();
-    initPasswordStrength();
+if (auth) {
     initRegisterPage();
     initLoginPage();
     initForgotPasswordPage();
