@@ -189,7 +189,17 @@ function loadPatients() {
             return Object.assign({ id: doc.id }, data);
         });
 
-        patientState.patients = records.length ? records : makePatientSnapshot();
+        if (!records.length) {
+            seedPatientsToFirestore().catch(function(error) {
+                console.error("Could not seed patient records:", error);
+                patientState.patients = makePatientSnapshot();
+                patientState.filteredPatients = [...patientState.patients];
+                renderPatients();
+            });
+            return;
+        }
+
+        patientState.patients = records;
         patientState.filteredPatients = [...patientState.patients];
         renderPatients();
         showToast("Patient list refreshed from Firestore.", "success");
@@ -200,6 +210,20 @@ function loadPatients() {
         renderPatients();
         showToast("Using local demo records because Firestore sync could not be completed.", "error");
     });
+}
+
+function seedPatientsToFirestore() {
+    const seedData = makePatientSnapshot().map(function(patient) {
+        return Object.assign({}, patient, {
+            createdAt: firebase.firestore.FieldValue.serverTimestamp(),
+            updatedAt: firebase.firestore.FieldValue.serverTimestamp(),
+            registrationDate: patient.registrationDate || new Date().toISOString().slice(0, 10)
+        });
+    });
+
+    return Promise.all(seedData.map(function(patient) {
+        return db.collection("patients").add(patient);
+    }));
 }
 
 function applyFilters() {
@@ -703,6 +727,11 @@ function savePatient(payload) {
         medicalRecords: 0
     }, payload);
 
+    const firestorePayload = Object.assign({}, patientPayload, {
+        createdAt: db ? firebase.firestore.FieldValue.serverTimestamp() : null,
+        updatedAt: db ? firebase.firestore.FieldValue.serverTimestamp() : null
+    });
+
     if (!db) {
         patientState.patients = [Object.assign({ id: `local-${Date.now()}` }, patientPayload), ...patientState.patients];
         patientState.filteredPatients = [...patientState.patients];
@@ -712,7 +741,7 @@ function savePatient(payload) {
         return;
     }
 
-    db.collection("patients").add(patientPayload).then(function() {
+    db.collection("patients").add(firestorePayload).then(function() {
         closePatientModal();
         showToast(`${patientPayload.fullName} was added to the patient directory.`, "success");
     }).catch(function(error) {
