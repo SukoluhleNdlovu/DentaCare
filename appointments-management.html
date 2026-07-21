@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Appointments Management - DentaCare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="appointments-management.css" />
+</head>
+<body class="appointments-page-body">
+    <div class="appointments-shell">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <img src="images/DentaCare logo1.png" alt="DentaCare logo" />
+                    <div>
+                        <h2>DentaCare</h2>
+                        <p>Clinic Admin</p>
+                    </div>
+                </div>
+                <button class="sidebar-close" type="button" aria-label="Close menu">×</button>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Sidebar navigation">
+                <a class="nav-item" href="admin-dashboard.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-item active" href="appointments-management.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg>
+                    <span>Appointments</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="3"></circle><path d="M17 8a3 3 0 1 1 0 6"></path></svg>
+                    <span>Patients</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v1H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4Z"></path></svg>
+                    <span>Dentists</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10"></path><path d="M7 7h10"></path><path d="M7 11h10"></path><path d="M7 15h6"></path><rect x="4" y="3" width="16" height="16" rx="2"></rect></svg>
+                    <span>Medical Records</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12"></path><path d="M6 7h12"></path><path d="M8 11h8"></path><path d="M8 15h5"></path><rect x="4" y="3" width="16" height="16" rx="2"></rect></svg>
+                    <span>Prescriptions</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19V9"></path><path d="M19 19V5"></path><path d="M5 9a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v10"></path></svg>
+                    <span>Treatment Plans</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 17h5l-1.4-1.4a2 2 0 0 1-.6-1.4V11a6 6 0 1 0-12 0v3.2a2 2 0 0 1-.6 1.4L4 17h5"></path><path d="M9 17v1a3 3 0 0 0 6 0v-1"></path></svg>
+                    <span>Notifications</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9"></path><path d="M20 19V5"></path><path d="M4 9a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10"></path><path d="M8 19v-4h8v4"></path></svg>
+                    <span>Reports &amp; Analytics</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 0-4 4v1H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-2V7a4 4 0 0 0-4-4Z"></path></svg>
+                    <span>User Management</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.2a2 2 0 0 1-2.5 2.8l-.2-.1a1.7 1.7 0 0 0-1.8.3 1.7 1.7 0 0 0-.4 1.8l.1.2a2 2 0 0 1-3.5 2l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1.1 1.6l0 .3a2 2 0 0 1-3.6 1.2l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 .9l-.1.2a2 2 0 0 1-3.5-1.9l.1-.2a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 0 1-1.8-2.8l.1-.2a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.7-.9l-.2.1a2 2 0 0 1-1.3-3.2l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.1-1.1l-.2-.1a2 2 0 0 1 1.6-3.4l.2.1a1.7 1.7 0 0 0 1.8.3 1.7 1.7 0 0 0 1-1.6V3a2 2 0 0 1 3.6-1.2l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.8l-.1-.2a2 2 0 0 1 3.5-1.9l.1.1a1.7 1.7 0 0 0 1.8.3 1.7 1.7 0 0 0 1.1-1.5l.1-.2a2 2 0 0 1 3.5 1.8l-.1.2a1.7 1.7 0 0 0-.3 1.8 1.7 1.7 0 0 0 1.7.9h.2a2 2 0 0 1 2 2.7l-.1.2a1.7 1.7 0 0 0-.3 1.8 1.7 1.7 0 0 0 1.4 1.1l.2.1a2 2 0 0 1-.7 3.6l-.3-.1a1.7 1.7 0 0 0-1.8.3 1.7 1.7 0 0 0-.5 1.6l.1.2a2 2 0 0 1-1.7 2.8Z"></path></svg>
+                    <span>Settings</span>
+                </a>
+                <a class="nav-item nav-logout" href="#" id="appointmentsSignOut">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+        <main class="dashboard-main">
+            <header class="dashboard-topbar">
+                <button class="mobile-toggle" type="button" aria-label="Open navigation">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
+                </button>
+                <label class="topbar-search" aria-label="Search appointments">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+                    <input type="text" id="appointmentsSearch" placeholder="Search appointments or patients" />
+                </label>
+                <div class="topbar-actions">
+                    <button class="bell-btn" type="button" aria-label="Notifications">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 17h5l-1.4-1.4a2 2 0 0 1-.6-1.4V11a6 6 0 1 0-12 0v3.2a2 2 0 0 1-.6 1.4L4 17h5"></path><path d="M9 17v1a3 3 0 0 0 6 0v-1"></path></svg>
+                        <span class="bell-badge" id="notificationBadge">0</span>
+                    </button>
+                    <div class="profile-menu">
+                        <button class="profile-trigger" type="button" aria-label="Open profile menu">
+                            <img src="images/dentist1.png" alt="Administrator profile" />
+                            <div class="profile-meta">
+                                <strong>System Administrator</strong>
+                                <span>Clinic Operations</span>
+                            </div>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="profile-dropdown">
+                            <a href="#">Profile</a>
+                            <a href="#">Settings</a>
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="page-header">
+                <div>
+                    <p class="page-eyebrow">Appointments Operations</p>
+                    <h1>Appointments Management</h1>
+                    <p>Manage, approve, reschedule, and monitor all patient appointments in real time.</p>
+                </div>
+                <div class="page-actions">
+                    <button class="pill-btn" type="button" id="refreshAppointmentsBtn">Refresh</button>
+                    <button class="pill-btn primary" type="button" id="addAppointmentBtn">Add Appointment</button>
+                </div>
+            </section>
+
+            <section class="stats-grid" aria-label="Appointment summary">
+                <article class="stat-card" data-accent="blue">
+                    <div class="stat-icon">📅</div>
+                    <div>
+                        <h3>Total Appointments</h3>
+                        <div class="stat-counter" data-target="128">0</div>
+                    </div>
+                </article>
+                <article class="stat-card" data-accent="teal">
+                    <div class="stat-icon">🕒</div>
+                    <div>
+                        <h3>Today's Appointments</h3>
+                        <div class="stat-counter" data-target="14">0</div>
+                    </div>
+                </article>
+                <article class="stat-card" data-accent="amber">
+                    <div class="stat-icon">⏳</div>
+                    <div>
+                        <h3>Pending Approval</h3>
+                        <div class="stat-counter" data-target="6">0</div>
+                    </div>
+                </article>
+                <article class="stat-card" data-accent="pink">
+                    <div class="stat-icon">✔️</div>
+                    <div>
+                        <h3>Confirmed Appointments</h3>
+                        <div class="stat-counter" data-target="81">0</div>
+                    </div>
+                </article>
+                <article class="stat-card" data-accent="blue">
+                    <div class="stat-icon">✅</div>
+                    <div>
+                        <h3>Completed Appointments</h3>
+                        <div class="stat-counter" data-target="34">0</div>
+                    </div>
+                </article>
+                <article class="stat-card" data-accent="red">
+                    <div class="stat-icon">✖️</div>
+                    <div>
+                        <h3>Cancelled Appointments</h3>
+                        <div class="stat-counter" data-target="4">0</div>
+                    </div>
+                </article>
+                <article class="stat-card" data-accent="purple">
+                    <div class="stat-icon">🔄</div>
+                    <div>
+                        <h3>Rescheduled Appointments</h3>
+                        <div class="stat-counter" data-target="3">0</div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="toolbar-card">
+                <div class="toolbar-fields">
+                    <label class="field-inline">
+                        <span>Search</span>
+                        <input type="text" id="toolbarSearch" placeholder="Patient or ID" />
+                    </label>
+                    <label class="field-inline">
+                        <span>Status</span>
+                        <select id="statusFilter">
+                            <option value="all">All</option>
+                            <option value="Pending">Pending</option>
+                            <option value="Confirmed">Confirmed</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Cancelled">Cancelled</option>
+                            <option value="Rescheduled">Rescheduled</option>
+                            <option value="No Show">No Show</option>
+                        </select>
+                    </label>
+                    <label class="field-inline">
+                        <span>Dentist</span>
+                        <select id="dentistFilter">
+                            <option value="all">All</option>
+                            <option value="Dr Sarah Johnson">Dr Sarah Johnson</option>
+                            <option value="Dr Michael Chen">Dr Michael Chen</option>
+                            <option value="Dr Alice Muhad">Dr Alice Muhad</option>
+                        </select>
+                    </label>
+                    <label class="field-inline">
+                        <span>Service</span>
+                        <select id="serviceFilter">
+                            <option value="all">All</option>
+                            <option value="Routine Cleaning">Routine Cleaning</option>
+                            <option value="Cosmetic Whitening">Cosmetic Whitening</option>
+                            <option value="Orthodontic Review">Orthodontic Review</option>
+                            <option value="Root Canal">Root Canal</option>
+                            <option value="Implant Consultation">Implant Consultation</option>
+                        </select>
+                    </label>
+                    <label class="field-inline">
+                        <span>Date Range</span>
+                        <select id="dateFilter">
+                            <option value="all">All Dates</option>
+                            <option value="today">Today</option>
+                            <option value="week">This Week</option>
+                            <option value="month">This Month</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="toolbar-actions">
+                    <button class="secondary-btn" type="button" id="refreshToolbarBtn">Refresh</button>
+                    <button class="secondary-btn" type="button">Export CSV</button>
+                    <button class="secondary-btn" type="button">Export PDF</button>
+                    <button class="secondary-btn" type="button">Print Schedule</button>
+                    <button class="primary-btn" type="button" id="toolbarAddAppointmentBtn">Add Appointment</button>
+                </div>
+            </section>
+
+            <section class="content-grid">
+                <div class="panel appointments-panel">
+                    <div class="panel-title">
+                        <div>
+                            <h2>Appointment Schedule</h2>
+                            <p>Live schedule overview with responsive table support.</p>
+                        </div>
+                        <div class="panel-actions">
+                            <button class="secondary-btn compact" type="button" id="exportCsvBtn">Export</button>
+                        </div>
+                    </div>
+                    <div class="table-wrap">
+                        <table class="appointments-table">
+                            <thead>
+                                <tr>
+                                    <th><button class="sort-btn" data-sort="id">Appointment ID</button></th>
+                                    <th><button class="sort-btn" data-sort="patientName">Patient</button></th>
+                                    <th><button class="sort-btn" data-sort="dentist">Dentist</button></th>
+                                    <th><button class="sort-btn" data-sort="service">Service</button></th>
+                                    <th><button class="sort-btn" data-sort="appointmentDate">Date</button></th>
+                                    <th><button class="sort-btn" data-sort="appointmentTime">Time</button></th>
+                                    <th>Duration</th>
+                                    <th>Booking Date</th>
+                                    <th>Status</th>
+                                    <th>Payment</th>
+                                    <th>Notes</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="appointmentsTableBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="pagination" id="paginationControls"></div>
+                </div>
+
+                <div class="side-stack">
+                    <section class="panel calendar-panel">
+                        <div class="panel-title">
+                            <div>
+                                <h2>Calendar View</h2>
+                                <p>Day, week, and month scheduling.</p>
+                            </div>
+                            <div class="calendar-toggle" aria-label="Calendar view">
+                                <button class="toggle-btn active" data-view="month" type="button">Month</button>
+                                <button class="toggle-btn" data-view="week" type="button">Week</button>
+                                <button class="toggle-btn" data-view="day" type="button">Day</button>
+                            </div>
+                        </div>
+                        <div id="calendarView"></div>
+                    </section>
+
+                    <section class="panel availability-panel">
+                        <div class="panel-title">
+                            <div>
+                                <h2>Dentist Availability</h2>
+                                <p>Schedule-aware booking windows.</p>
+                            </div>
+                        </div>
+                        <div class="availability-list">
+                            <div class="availability-item">
+                                <div class="avatar">SJ</div>
+                                <div class="item-body">
+                                    <strong>Dr Sarah Johnson</strong>
+                                    <p>Weekdays only • General dentistry &amp; hygiene</p>
+                                </div>
+                            </div>
+                            <div class="availability-item">
+                                <div class="avatar">MC</div>
+                                <div class="item-body">
+                                    <strong>Dr Michael Chen</strong>
+                                    <p>Mon, Wed, Fri • Endodontics &amp; implants</p>
+                                </div>
+                            </div>
+                            <div class="availability-item">
+                                <div class="avatar">AM</div>
+                                <div class="item-body">
+                                    <strong>Dr Alice Muhad</strong>
+                                    <p>Tue, Thu, Sat • Orthodontics &amp; cosmetic</p>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="panel upcoming-panel">
+                        <div class="panel-title">
+                            <div>
+                                <h2>Upcoming Appointments</h2>
+                                <p>Next patient visits and timers.</p>
+                            </div>
+                        </div>
+                        <div id="upcomingAppointmentsList"></div>
+                    </section>
+
+                    <section class="panel activity-panel">
+                        <div class="panel-title">
+                            <div>
+                                <h2>Recent Activity</h2>
+                                <p>Latest administrative actions.</p>
+                            </div>
+                        </div>
+                        <div id="recentActivityList"></div>
+                    </section>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal" id="detailsModal" aria-hidden="true">
+        <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="detailsModalTitle">
+            <button class="modal-close" type="button" id="closeModalBtn">×</button>
+            <div id="detailsModalContent"></div>
+        </div>
+    </div>
+
+    <div class="modal" id="appointmentModal" aria-hidden="true">
+        <div class="modal-card modal-form-card" role="dialog" aria-modal="true" aria-labelledby="appointmentModalTitle">
+            <button class="modal-close" type="button" id="closeAppointmentModalBtn">×</button>
+            <h3 id="appointmentModalTitle">Add New Appointment</h3>
+            <form id="appointmentForm" class="appointment-form">
+                <label>
+                    <span>Patient Name</span>
+                    <input type="text" id="patientNameInput" required />
+                </label>
+                <label>
+                    <span>Patient Email</span>
+                    <input type="email" id="patientEmailInput" required />
+                </label>
+                <label>
+                    <span>Dentist</span>
+                    <select id="dentistInput" required>
+                        <option value="Dr Sarah Johnson">Dr Sarah Johnson</option>
+                        <option value="Dr Michael Chen">Dr Michael Chen</option>
+                        <option value="Dr Alice Muhad">Dr Alice Muhad</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Service</span>
+                    <select id="serviceInput" required>
+                        <option value="Routine Cleaning">Routine Cleaning</option>
+                        <option value="Cosmetic Whitening">Cosmetic Whitening</option>
+                        <option value="Orthodontic Review">Orthodontic Review</option>
+                        <option value="Root Canal">Root Canal</option>
+                        <option value="Implant Consultation">Implant Consultation</option>
+                    </select>
+                </label>
+                <label>
+                    <span>Appointment Date</span>
+                    <input type="date" id="dateInput" required />
+                </label>
+                <label>
+                    <span>Appointment Time</span>
+                    <input type="time" id="timeInput" required />
+                </label>
+                <label>
+                    <span>Duration</span>
+                    <input type="text" id="durationInput" value="45 min" required />
+                </label>
+                <label>
+                    <span>Notes</span>
+                    <textarea id="notesInput" rows="3" placeholder="Symptoms, concerns, or special requirements"></textarea>
+                </label>
+                <p class="availability-message" id="availabilityMessage"></p>
+                <div class="modal-actions">
+                    <button class="secondary-btn" type="button" id="cancelAppointmentModalBtn">Cancel</button>
+                    <button class="primary-btn" type="submit">Create Appointment</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="toast" id="toast" aria-live="polite"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+    <script src="appointments-management.js"></script>
+</body>
+</html>

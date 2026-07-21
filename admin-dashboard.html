@@ -1,325 +1,459 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>
-        Admin Dashboard - DentaCare Dental Management System
-    </title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap"
-        rel="stylesheet">
+    <title>Admin Dashboard - DentaCare Dental Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="admin-dashboard.css">
 </head>
 
 <body class="admin-dashboard-body">
-<div class="admin-dashboard-layout">
-    <!-- SIDEBAR -->
-    <aside class="admin-sidebar">
-        <div class="admin-brand">
-            <img 
-            src="images/DentaCare logo1.png"
-            alt="DentaCare Logo"
-            >
-            <h2>
-                DentaCare
-            </h2>
-        </div>
-
-        <nav class="admin-navigation">
-            <a href="admin-dashboard.html"
-               class="active">
-                <span>📊</span>
-                Dashboard
-            </a>
-
-            <a href="manage-administrators.html"
-               data-permission="manageAdministrators">
-
-                <span>👤</span>
-                Administrators
-
-            </a>
-
-            <a href="manage-dentists.html"
-               data-permission="manageDentists">
-
-                <span>🦷</span>
-                Dentists
-
-            </a>
-
-            <a href="manage-patients.html"
-               data-permission="managePatients">
-
-                <span>👥</span>
-                Patients
-
-            </a>
-
-            <a href="clinic-settings.html"
-               data-permission="clinicSettings">
-                <span>⚙️</span>
-                Clinic Settings
-            </a>
-
-            <a href="reports.html"
-               data-permission="reports">
-                <span>📈</span>
-                Reports
-            </a>
-
-            <a href="security-settings.html"
-               data-permission="securitySettings">
-                <span>🔐</span>
-                Security
-            </a>
-        </nav>
-
-        <button 
-        id="adminDashboardSignOut"
-        class="admin-sidebar-signout">
-            🚪 Sign Out
-        </button>
-    </aside>
-
-    <!-- MAIN CONTENT -->
-    <main class="admin-dashboard-main">
-        <header class="admin-dashboard-header">
-            <div>
-                <p class="admin-dashboard-kicker">
-                    Authorized Personnel Only
-                </p>
-                <h1 id="adminDashboardTitle">
-                    Admin Dashboard
-                </h1>
-
-                <p id="adminDashboardStatus">
-                    Verifying administrator permissions...
-                </p>
+    <div class="admin-dashboard-shell">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <img src="images/DentaCare logo1.png" alt="DentaCare Logo">
+                    <div>
+                        <h2>DentaCare</h2>
+                        <p>Clinic Admin</p>
+                    </div>
+                </div>
+                <button class="sidebar-close" type="button" aria-label="Close menu">×</button>
             </div>
 
-            <div class="admin-profile-card">
-                <div class="admin-avatar">
-                    👨‍💼
+            <nav class="sidebar-nav" aria-label="Sidebar navigation">
+                <a class="nav-item active" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-item" href="appointments-management.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg>
+                    <span>Appointments</span>
+                </a>
+                <a class="nav-item" href="patients-management.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="3"></circle><path d="M17 8a3 3 0 1 1 0 6"></path></svg>
+                    <span>Patients</span>
+                </a>
+                <a class="nav-item" href="dentists-management.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v1H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4Z"></path></svg>
+                    <span>Dentists</span>
+                </a>
+                <a class="nav-item" href="medical-records.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10"></path><path d="M7 7h10"></path><path d="M7 11h10"></path><path d="M7 15h6"></path><rect x="4" y="3" width="16" height="16" rx="2"></rect></svg>
+                    <span>Medical Records</span>
+                </a>
+                <a class="nav-item" href="prescriptions.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12"></path><path d="M6 7h12"></path><path d="M8 11h8"></path><path d="M8 15h5"></path><rect x="4" y="3" width="16" height="16" rx="2"></rect></svg>
+                    <span>Prescriptions</span>
+                </a>
+                <a class="nav-item" href="treatment-plans.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19V9"></path><path d="M19 19V5"></path><path d="M5 9a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v10"></path></svg>
+                    <span>Treatment Plans</span>
+                </a>
+                <a class="nav-item" href="notifications.html">   
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 17h5l-1.4-1.4a2 2 0 0 1-.6-1.4V11a6 6 0 1 0-12 0v3.2a2 2 0 0 1-.6 1.4L4 17h5"></path><path d="M9 17v1a3 3 0 0 0 6 0v-1"></path></svg>
+                    <span>Notifications</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9"></path><path d="M20 19V5"></path><path d="M4 9a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10"></path><path d="M8 19v-4h8v4"></path></svg>
+                    <span>Reports &amp; Analytics</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 0-4 4v1H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-2V7a4 4 0 0 0-4-4Z"></path></svg>
+                    <span>User Management</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.2a2 2 0 0 1-2.5 2.8l-.2-.1a1.7 1.7 0 0 0-1.8.3 1.7 1.7 0 0 0-.4 1.8l.1.2a2 2 0 0 1-3.5 2l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1.1 1.6l0 .3a2 2 0 0 1-3.6 1.2l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 .9l-.1.2a2 2 0 0 1-3.5-1.9l.1-.2a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 0 1-1.8-2.8l.1-.2a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.7-.9l-.2.1a2 2 0 0 1-1.3-3.2l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.1-1.1l-.2-.1a2 2 0 0 1 1.6-3.4l.2.1a1.7 1.7 0 0 0 1.8.3 1.7 1.7 0 0 0 1-1.6V3a2 2 0 0 1 3.6-1.2l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.8l-.1-.2a2 2 0 0 1 3.5-1.9l.1.1a1.7 1.7 0 0 0 1.8.3 1.7 1.7 0 0 0 1.1-1.5l.1-.2a2 2 0 0 1 3.5 1.8l-.1.2a1.7 1.7 0 0 0-.3 1.8 1.7 1.7 0 0 0 1.7.9h.2a2 2 0 0 1 2 2.7l-.1.2a1.7 1.7 0 0 0-.3 1.8 1.7 1.7 0 0 0 1.4 1.1l.2.1a2 2 0 0 1-.7 3.6l-.3-.1a1.7 1.7 0 0 0-1.8.3 1.7 1.7 0 0 0-.5 1.6l.1.2a2 2 0 0 1-1.7 2.8Z"></path></svg>
+                    <span>Settings</span>
+                </a>
+                <a class="nav-item nav-logout" href="#" id="adminDashboardSignOut">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+        <main class="dashboard-main">
+            <header class="dashboard-topbar">
+                <button class="mobile-toggle" type="button" aria-label="Open navigation">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
+                </button>
+                <label class="topbar-search" aria-label="Search">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+                    <input type="text" placeholder="Search patients or appointments">
+                </label>
+                <div class="topbar-actions">
+                    <button class="bell-btn" type="button" aria-label="Open notifications">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 17h5l-1.4-1.4a2 2 0 0 1-.6-1.4V11a6 6 0 1 0-12 0v3.2a2 2 0 0 1-.6 1.4L4 17h5"></path><path d="M9 17v1a3 3 0 0 0 6 0v-1"></path></svg>
+                        <span class="bell-badge">4</span>
+                    </button>
+                    <div class="profile-menu">
+                        <button class="profile-trigger" type="button" aria-label="Open profile menu">
+                            <img src="images/dentist1.png" alt="Administrator profile">
+                            <div class="profile-meta">
+                                <strong>System Administrator</strong>
+                                <span>Clinic Operations</span>
+                            </div>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="profile-dropdown">
+                            <a href="#">Profile</a>
+                            <a href="#">Settings</a>
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
                 </div>
+            </header>
+
+            <section class="hero-card">
                 <div>
-                    <strong id="adminName">
-                        Administrator
-                    </strong>
-
-                    <small id="adminRole">
-                        Super Admin
-                    </small>
+                    <p class="hero-eyebrow">Authorized Personnel</p>
+                    <h1>Welcome Back, Administrator</h1>
+                    <p id="adminDashboardStatus">Verifying administrator permissions...</p>
+                    <p>Here's an overview of today's clinic activities and patient care priorities.</p>
                 </div>
-            </div>
-        </header>
-
-        <!-- STATISTICS CARDS -->
-
-
-        <section class="dashboard-statistics">
-
-
-
-            <div class="dashboard-card">
-
-
-                <h3>
-                    Total Patients
-                </h3>
-
-
-                <p id="totalPatients">
-                    0
-                </p>
-
-
-            </div>
-
-
-
-
-            <div class="dashboard-card">
-
-
-                <h3>
-                    Dentists
-                </h3>
-
-
-                <p id="totalDentists">
-                    0
-                </p>
-
-
-            </div>
-
-
-
-
-
-            <div class="dashboard-card">
-
-
-                <h3>
-                    Appointments Today
-                </h3>
-
-
-                <p id="todayAppointments">
-                    0
-                </p>
-
-
-            </div>
-
-
-
-
-
-            <div class="dashboard-card">
-
-
-                <h3>
-                    Reports Generated
-                </h3>
-
-
-                <p id="totalReports">
-                    0
-                </p>
-
-
-            </div>
-
-
-
-        </section>
-
-
-
-
-
-
-
-        <!-- QUICK ACTIONS -->
-
-
-        <section class="dashboard-section">
-
-
-            <h2>
-                Quick Actions
-            </h2>
-
-
-
-            <div class="dashboard-actions">
-
-
-                <button data-permission="managePatients">
-
-                    ➕ Add Patient
-
-                </button>
-
-
-
-                <button data-permission="manageDentists">
-
-                    🦷 Add Dentist
-
-                </button>
-
-
-
-
-                <button data-permission="manageAdministrators">
-
-                    👤 Create Admin
-
-                </button>
-
-
-
-
-                <button data-permission="reports">
-
-                    📊 Generate Report
-
-                </button>
-
-
-
-            </div>
-
-
-        </section>
-
-
-
-
-
-
-
-        <!-- RECENT ACTIVITY -->
-
-
-        <section class="dashboard-section">
-
-
-            <h2>
-                Recent Activity
-            </h2>
-
-
-
-            <div 
-            id="recentActivity"
-            class="activity-container">
-
-
-                <p>
-                    Loading activity...
-                </p>
-
-
-            </div>
-
-
-        </section>
-
-
-
-    </main>
-
-
-
-</div>
-
-
-
-
-
-
-
-<!-- FIREBASE -->
-
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
-
-<script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
-
-
-<script src="firebase-config.js"></script>
-
-<script src="auth.js"></script>
-
-<script src="admin-dashboard.js"></script>
-
-
-
+                <div class="hero-meta">
+                    <div class="hero-chip" id="dashboardClock">Loading time...</div>
+                    <div class="hero-chip">24/7 Care Overview</div>
+                </div>
+            </section>
+
+            <section class="stats-grid" aria-label="Dashboard statistics">
+                <article class="stat-card" data-accent="blue">
+                    <div class="stat-header">
+                        <div>
+                            <h3>Total Patients</h3>
+                            <div class="stat-counter" data-target="284">0</div>
+                        </div>
+                        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="3"></circle><path d="M17 8a3 3 0 1 1 0 6"></path></svg></div>
+                    </div>
+                    <p>+12% from last month</p>
+                </article>
+                <article class="stat-card" data-accent="teal">
+                    <div class="stat-header">
+                        <div>
+                            <h3>Today's Appointments</h3>
+                            <div class="stat-counter" data-target="38">0</div>
+                        </div>
+                        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg></div>
+                    </div>
+                    <p>6 confirmed this hour</p>
+                </article>
+                <article class="stat-card" data-accent="amber">
+                    <div class="stat-header">
+                        <div>
+                            <h3>Available Dentists</h3>
+                            <div class="stat-counter" data-target="5">0</div>
+                        </div>
+                        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v1H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4Z"></path></svg></div>
+                    </div>
+                    <p>3 on-site today</p>
+                </article>
+                <article class="stat-card" data-accent="pink">
+                    <div class="stat-header">
+                        <div>
+                            <h3>Pending Prescriptions</h3>
+                            <div class="stat-counter" data-target="14">0</div>
+                        </div>
+                        <div class="stat-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12"></path><path d="M6 7h12"></path><path d="M8 11h8"></path><path d="M8 15h5"></path><rect x="4" y="3" width="16" height="16" rx="2"></rect></svg></div>
+                    </div>
+                    <p>2 require urgent review</p>
+                </article>
+            </section>
+
+            <section class="content-grid">
+                <div class="panel">
+                    <div class="panel-title">
+                        <div>
+                            <h2>Today's Appointments</h2>
+                            <p>Priority scheduling and patient follow-up</p>
+                        </div>
+                        <a href="#" class="small-btn">View All</a>
+                    </div>
+                    <div class="appointment-list">
+                        <div class="appointment-item">
+                            <div class="avatar"><img src="images/dentist1.png" alt="Patient portrait"></div>
+                            <div class="item-body">
+                                <div class="item-header">
+                                    <span class="item-heading">Ava Nkosi</span>
+                                    <span class="status-pill status-confirmed">Confirmed</span>
+                                </div>
+                                <div class="item-meta">09:30 AM • Dr Sarah Johnson • Cleaning &amp; Whitening</div>
+                                <div class="action-row">
+                                    <button class="small-btn" type="button">View</button>
+                                    <button class="small-btn" type="button">Approve</button>
+                                    <button class="small-btn" type="button">Reschedule</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="avatar">LM</div>
+                            <div class="item-body">
+                                <div class="item-header">
+                                    <span class="item-heading">Liam Moyo</span>
+                                    <span class="status-pill status-pending">Pending</span>
+                                </div>
+                                <div class="item-meta">11:15 AM • Dr Michael Chen • Root Canal</div>
+                                <div class="action-row">
+                                    <button class="small-btn" type="button">View</button>
+                                    <button class="small-btn" type="button">Approve</button>
+                                    <button class="small-btn" type="button">Cancel</button>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="appointment-item">
+                            <div class="avatar">SN</div>
+                            <div class="item-body">
+                                <div class="item-header">
+                                    <span class="item-heading">Siyanda Ncube</span>
+                                    <span class="status-pill status-completed">Completed</span>
+                                </div>
+                                <div class="item-meta">01:00 PM • Dr Alice Muhad • Orthodontic Review</div>
+                                <div class="action-row">
+                                    <button class="small-btn" type="button">View</button>
+                                    <button class="small-btn" type="button">Reschedule</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-title">
+                        <div>
+                            <h2>Recent Notifications</h2>
+                            <p>Live updates from clinic operations</p>
+                        </div>
+                    </div>
+                    <div class="notification-list">
+                        <div class="notification-item">
+                            <span class="notification-indicator"></span>
+                            <div class="item-body">
+                                <div class="item-heading">New appointment booked</div>
+                                <div class="notification-meta">Ava Nkosi scheduled a cleaning appointment for 09:30 AM.</div>
+                            </div>
+                        </div>
+                        <div class="notification-item">
+                            <span class="notification-indicator"></span>
+                            <div class="item-body">
+                                <div class="item-heading">Prescription updated</div>
+                                <div class="notification-meta">A new prescription was added for Liam Moyo by Dr Chen.</div>
+                            </div>
+                        </div>
+                        <div class="notification-item is-accent">
+                            <div class="notification-indicator"></div>
+                            <div class="item-body">
+                                <div class="item-heading">Treatment plan revised</div>
+                                <div class="notification-meta">The treatment plan for Siyanda was updated with follow-up notes.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="calendar-section">
+                <div class="panel">
+                    <div class="panel-title">
+                        <div>
+                            <h2>Appointment Calendar</h2>
+                            <p>Monthly view with statuses and availability</p>
+                        </div>
+                        <div class="legend">
+                            <div class="legend-item confirmed"><span class="legend-dot"></span>Confirmed</div>
+                            <div class="legend-item pending"><span class="legend-dot"></span>Pending</div>
+                            <div class="legend-item completed"><span class="legend-dot"></span>Completed</div>
+                        </div>
+                    </div>
+                    <div class="calendar-grid" aria-label="Calendar">
+                        <div class="calendar-day-name">Sun</div><div class="calendar-day-name">Mon</div><div class="calendar-day-name">Tue</div><div class="calendar-day-name">Wed</div><div class="calendar-day-name">Thu</div><div class="calendar-day-name">Fri</div><div class="calendar-day-name">Sat</div>
+                        <div class="calendar-cell"><span class="day-number">1</span></div>
+                        <div class="calendar-cell"><span class="day-number">2</span></div>
+                        <div class="calendar-cell"><span class="day-number">3</span><div class="calendar-event event-confirmed">9:00</div></div>
+                        <div class="calendar-cell"><span class="day-number">4</span></div>
+                        <div class="calendar-cell is-today"><span class="day-number">5</span><div class="calendar-event event-pending">11:15</div><div class="calendar-event event-completed">13:00</div></div>
+                        <div class="calendar-cell"><span class="day-number">6</span></div>
+                        <div class="calendar-cell"><span class="day-number">7</span></div>
+                        <div class="calendar-cell"><span class="day-number">8</span></div>
+                        <div class="calendar-cell"><span class="day-number">9</span></div>
+                        <div class="calendar-cell"><span class="day-number">10</span></div>
+                        <div class="calendar-cell"><span class="day-number">11</span><div class="calendar-event event-confirmed">14:00</div></div>
+                        <div class="calendar-cell"><span class="day-number">12</span></div>
+                        <div class="calendar-cell"><span class="day-number">13</span></div>
+                        <div class="calendar-cell"><span class="day-number">14</span></div>
+                        <div class="calendar-cell"><span class="day-number">15</span></div>
+                        <div class="calendar-cell"><span class="day-number">16</span></div>
+                        <div class="calendar-cell"><span class="day-number">17</span></div>
+                        <div class="calendar-cell"><span class="day-number">18</span><div class="calendar-event event-pending">10:30</div></div>
+                        <div class="calendar-cell"><span class="day-number">19</span></div>
+                        <div class="calendar-cell"><span class="day-number">20</span></div>
+                        <div class="calendar-cell"><span class="day-number">21</span></div>
+                        <div class="calendar-cell"><span class="day-number">22</span><div class="calendar-event event-confirmed">12:30</div></div>
+                        <div class="calendar-cell"><span class="day-number">23</span></div>
+                        <div class="calendar-cell"><span class="day-number">24</span></div>
+                        <div class="calendar-cell"><span class="day-number">25</span></div>
+                        <div class="calendar-cell"><span class="day-number">26</span></div>
+                        <div class="calendar-cell"><span class="day-number">27</span></div>
+                        <div class="calendar-cell"><span class="day-number">28</span></div>
+                        <div class="calendar-cell"><span class="day-number">29</span></div>
+                        <div class="calendar-cell"><span class="day-number">30</span></div>
+                    </div>
+                </div>
+
+                <div class="panel">
+                    <div class="panel-title">
+                        <div>
+                            <h2>Dentist Availability</h2>
+                            <p>Live schedule overview</p>
+                        </div>
+                    </div>
+                    <div class="availability-list">
+                        <div class="availability-item">
+                            <div class="avatar"><img src="images/dentist1.png" alt="Dr Sarah Johnson"></div>
+                            <div class="item-body">
+                                <div class="item-heading">Dr Sarah Johnson</div>
+                                <div class="item-meta">General Dentistry • Next available 09:30 AM</div>
+                                <div class="availability-badge">Available - Weekdays</div>
+                            </div>
+                        </div>
+                        <div class="availability-item">
+                            <div class="avatar">MC</div>
+                            <div class="item-body">
+                                <div class="item-heading">Dr Michael Chen</div>
+                                <div class="item-meta">Endodontics • Next available 11:15 AM</div>
+                                <div class="availability-badge">Available - Monday, Wednesday, Friday</div>
+                            </div>
+                        </div>
+                        <div class="availability-item">
+                            <div class="avatar">AM</div>
+                            <div class="item-body">
+                                <div class="item-heading">Dr Alice Muhad</div>
+                                <div class="item-meta">Orthodontics • Next available 01:00 PM</div>
+                                <div class="availability-badge">Available - Tuesday, Thursday, Saturday</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel patient-activity-panel">
+                <div class="panel-title">
+                    <div>
+                        <h2>Patient Activity</h2>
+                        <p>Recent clinical updates and record changes</p>
+                    </div>
+                </div>
+                <div class="activity-table">
+                    <div class="activity-item">
+                        <div class="activity-info">
+                            <div class="avatar">AN</div>
+                            <div class="activity-main">
+                                <strong>Ava Nkosi</strong>
+                                <span>Medical record updated • Dr Sarah Johnson • 08:20 AM</span>
+                            </div>
+                        </div>
+                        <button class="activity-action" type="button">Open Profile</button>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-info">
+                            <div class="avatar">LM</div>
+                            <div class="activity-main">
+                                <strong>Liam Moyo</strong>
+                                <span>Prescription added • Dr Michael Chen • 09:10 AM</span>
+                            </div>
+                        </div>
+                        <button class="activity-action" type="button">Open Profile</button>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-info">
+                            <div class="avatar">SN</div>
+                            <div class="activity-main">
+                                <strong>Siyanda Ncube</strong>
+                                <span>Treatment completed • Dr Alice Muhad • 10:45 AM</span>
+                            </div>
+                        </div>
+                        <button class="activity-action" type="button">Open Profile</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel analytics-panel">
+                <div class="panel-title">
+                    <div>
+                        <h2>Reports &amp; Analytics</h2>
+                        <p>Interactive clinic performance insights</p>
+                    </div>
+                </div>
+                <div class="analytics-grid">
+                    <div class="chart-card">
+                        <h3>Monthly Appointments</h3>
+                        <p>Appointment volume trend</p>
+                        <div class="bar-chart">
+                            <div class="bar-column"><div class="bar-fill"></div><span class="bar-label">Jan</span></div>
+                            <div class="bar-column"><div class="bar-fill"></div><span class="bar-label">Feb</span></div>
+                            <div class="bar-column"><div class="bar-fill"></div><span class="bar-label">Mar</span></div>
+                            <div class="bar-column"><div class="bar-fill"></div><span class="bar-label">Apr</span></div>
+                            <div class="bar-column"><div class="bar-fill"></div><span class="bar-label">May</span></div>
+                            <div class="bar-column"><div class="bar-fill"></div><span class="bar-label">Jun</span></div>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Most Requested Services</h3>
+                        <p>Top dental services this quarter</p>
+                        <div class="service-list">
+                            <div class="service-row"><span>Preventive Care</span><span>42%</span></div>
+                            <div class="service-row"><span>Cosmetic Dentistry</span><span>28%</span></div>
+                            <div class="service-row"><span>Orthodontics</span><span>19%</span></div>
+                            <div class="service-row"><span>Endodontics</span><span>11%</span></div>
+                        </div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Patient Growth</h3>
+                        <p>Steady growth across the clinic</p>
+                        <div class="donut-chart"></div>
+                    </div>
+                    <div class="chart-card">
+                        <h3>Appointment Status</h3>
+                        <p>Distribution of current cases</p>
+                        <div class="service-list">
+                            <div class="service-row"><span>Confirmed</span><span>62%</span></div>
+                            <div class="service-row"><span>Pending</span><span>18%</span></div>
+                            <div class="service-row"><span>Completed</span><span>15%</span></div>
+                            <div class="service-row"><span>Cancelled</span><span>5%</span></div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="panel quick-actions-panel">
+                <div class="panel-title">
+                    <div>
+                        <h2>Quick Actions</h2>
+                        <p>Launch common administrative tasks instantly</p>
+                    </div>
+                </div>
+                <div class="quick-action-grid">
+                    <button class="quick-action-btn" type="button"><span class="icon-wrap">🧑‍⚕️</span><strong>Add Patient</strong><span>Create patient records and visit history.</span></button>
+                    <button class="quick-action-btn" type="button"><span class="icon-wrap">🦷</span><strong>Add Dentist</strong><span>Assign clinicians and specialties.</span></button>
+                    <button class="quick-action-btn" type="button"><span class="icon-wrap">📅</span><strong>Book Appointment</strong><span>Schedule visits and manage timelines.</span></button>
+                    <button class="quick-action-btn" type="button"><span class="icon-wrap">💊</span><strong>Create Prescription</strong><span>Issue treatment instructions quickly.</span></button>
+                    <button class="quick-action-btn" type="button"><span class="icon-wrap">🩺</span><strong>Create Treatment Plan</strong><span>Define treatment stages for patients.</span></button>
+                    <button class="quick-action-btn" type="button"><span class="icon-wrap">🔔</span><strong>Send Notification</strong><span>Inform staff and patients in real time.</span></button>
+                    <button class="quick-action-btn" type="button"><span class="icon-wrap">📊</span><strong>Generate Report</strong><span>Share clinic performance snapshots.</span></button>
+                    <button class="quick-action-btn" type="button"><span class="icon-wrap">👥</span><strong>Manage Users</strong><span>Control access and permissions.</span></button>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+    <script src="admin-dashboard.js"></script>
 </body>
-
 </html>

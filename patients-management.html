@@ -1,0 +1,300 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Patients Management - DentaCare</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="admin-dashboard.css" />
+    <link rel="stylesheet" href="patients-management.css" />
+</head>
+<body class="patients-page-body">
+    <div class="patients-shell">
+        <aside class="dashboard-sidebar">
+            <div class="sidebar-header">
+                <div class="brand">
+                    <img src="images/DentaCare logo1.png" alt="DentaCare logo" />
+                    <div>
+                        <h2>DentaCare</h2>
+                        <p>Clinic Admin</p>
+                    </div>
+                </div>
+                <button class="sidebar-close" type="button" aria-label="Close menu">×</button>
+            </div>
+
+            <nav class="sidebar-nav" aria-label="Sidebar navigation">
+                <a class="nav-item" href="admin-dashboard.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    <span>Dashboard</span>
+                </a>
+                <a class="nav-item" href="appointments-management.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"></rect><path d="M16 2v4"></path><path d="M8 2v4"></path><path d="M3 10h18"></path></svg>
+                    <span>Appointments</span>
+                </a>
+                <a class="nav-item active" href="patients-management.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H7a4 4 0 0 0-4 4v2"></path><circle cx="9.5" cy="7" r="3"></circle><path d="M17 8a3 3 0 1 1 0 6"></path></svg>
+                    <span>Patients</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a4 4 0 0 0-4 4v1H6a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-2V6a4 4 0 0 0-4-4Z"></path></svg>
+                    <span>Dentists</span>
+                </a>
+                <a class="nav-item" href="medical-records.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M7 3h10"></path><path d="M7 7h10"></path><path d="M7 11h10"></path><path d="M7 15h6"></path><rect x="4" y="3" width="16" height="16" rx="2"></rect></svg>
+                    <span>Medical Records</span>
+                </a>
+                <a class="nav-item" href="prescriptions.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 3h12"></path><path d="M6 7h12"></path><path d="M8 11h8"></path><path d="M8 15h5"></path><rect x="4" y="3" width="16" height="16" rx="2"></rect></svg>
+                    <span>Prescriptions</span>
+                </a>
+                <a class="nav-item" href="treatment-plans.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19V9"></path><path d="M19 19V5"></path><path d="M5 9a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v10"></path></svg>
+                    <span>Treatment Plans</span>
+                </a>
+                <a class="nav-item" href="notifications.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 17h5l-1.4-1.4a2 2 0 0 1-.6-1.4V11a6 6 0 1 0-12 0v3.2a2 2 0 0 1-.6 1.4L4 17h5"></path><path d="M9 17v1a3 3 0 0 0 6 0v-1"></path></svg>
+                    <span>Notifications</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V9"></path><path d="M20 19V5"></path><path d="M4 9a4 4 0 0 1 4-4h8a4 4 0 0 1 4 4v10"></path><path d="M8 19v-4h8v4"></path></svg>
+                    <span>Reports &amp; Analytics</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a4 4 0 0 0-4 4v1H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8a2 2 0 0 0-2-2h-2V7a4 4 0 0 0-4-4Z"></path></svg>
+                    <span>User Management</span>
+                </a>
+                <a class="nav-item" href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.8l.1.2a2 2 0 0 1-2.5 2.8l-.2-.1a1.7 1.7 0 0 0-1.8.3 1.7 1.7 0 0 0-.4 1.8l.1.2a2 2 0 0 1-3.5 2l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1.1 1.6l0 .3a2 2 0 0 1-3.6 1.2l-.1-.1a1.7 1.7 0 0 0-1.8-.3 1.7 1.7 0 0 0-1 .9l-.1.2a2 2 0 0 1-3.5-1.9l.1-.2a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.5-1H3a2 2 0 0 1-1.8-2.8l.1-.2a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.7-.9l-.2.1a2 2 0 0 1-1.3-3.2l.1-.1a1.7 1.7 0 0 0 .3-1.8 1.7 1.7 0 0 0-1.1-1.1l-.2-.1a2 2 0 0 1 1.6-3.4l.2.1a1.7 1.7 0 0 0 1.8.3 1.7 1.7 0 0 0 1-1.6V3a2 2 0 0 1 3.6-1.2l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.8l-.1-.2a2 2 0 0 1 3.5-1.9l.1.1a1.7 1.7 0 0 0 1.8.3 1.7 1.7 0 0 0 1.1-1.5l.1-.2a2 2 0 0 1 3.5 1.8l-.1.2a1.7 1.7 0 0 0-.3 1.8 1.7 1.7 0 0 0 1.7.9h.2a2 2 0 0 1 2 2.7l-.1.2a1.7 1.7 0 0 0-.3 1.8 1.7 1.7 0 0 0 1.4 1.1l.2.1a2 2 0 0 1-.7 3.6l-.3-.1a1.7 1.7 0 0 0-1.8.3 1.7 1.7 0 0 0-.5 1.6l.1.2a2 2 0 0 1-1.7 2.8Z"></path></svg>
+                    <span>Settings</span>
+                </a>
+                <a class="nav-item nav-logout" href="#" id="patientsSignOut">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path></svg>
+                    <span>Logout</span>
+                </a>
+            </nav>
+        </aside>
+
+        <div class="sidebar-backdrop" aria-hidden="true"></div>
+
+        <main class="dashboard-main">
+            <header class="dashboard-topbar">
+                <button class="mobile-toggle" type="button" aria-label="Open navigation">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="7" x2="21" y2="7"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="17" x2="21" y2="17"></line></svg>
+                </button>
+                <label class="topbar-search" aria-label="Search patients">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"></circle><path d="m20 20-3.5-3.5"></path></svg>
+                    <input type="text" id="patientSearchInput" placeholder="Search patients or records" />
+                </label>
+                <div class="topbar-actions">
+                    <button class="bell-btn" type="button" aria-label="Notifications">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M15 17h5l-1.4-1.4a2 2 0 0 1-.6-1.4V11a6 6 0 1 0-12 0v3.2a2 2 0 0 1-.6 1.4L4 17h5"></path><path d="M9 17v1a3 3 0 0 0 6 0v-1"></path></svg>
+                        <span class="bell-badge">3</span>
+                    </button>
+                    <div class="profile-menu">
+                        <button class="profile-trigger" type="button" aria-label="Open profile menu">
+                            <img src="images/dentist1.png" alt="Administrator profile" />
+                            <div class="profile-meta">
+                                <strong>System Administrator</strong>
+                                <span>Clinic Operations</span>
+                            </div>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"></polyline></svg>
+                        </button>
+                        <div class="profile-dropdown">
+                            <a href="#">Profile</a>
+                            <a href="#">Settings</a>
+                            <a href="#">Logout</a>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            <section class="page-header">
+                <div>
+                    <p class="page-eyebrow">Patient Care Operations</p>
+                    <h1>Patients Management</h1>
+                    <p>View, manage, and monitor all registered patients and their healthcare information in real time.</p>
+                </div>
+                <div class="page-actions">
+                    <button class="pill-btn" type="button" id="refreshPatientsBtn">Refresh Data</button>
+                    <button class="pill-btn primary" type="button" id="addPatientBtn">Add New Patient</button>
+                </div>
+            </section>
+
+            <section class="stats-grid" aria-label="Patient summary cards">
+                <article class="stat-card" data-accent="blue">
+                    <div class="stat-icon">👥</div>
+                    <div>
+                        <h3>Total Patients</h3>
+                        <div class="stat-counter" data-target="0">0</div>
+                    </div>
+                </article>
+                <article class="stat-card" data-accent="teal">
+                    <div class="stat-icon">🆕</div>
+                    <div>
+                        <h3>New Patients This Month</h3>
+                        <div class="stat-counter" data-target="0">0</div>
+                    </div>
+                </article>
+                <article class="stat-card" data-accent="amber">
+                    <div class="stat-icon">💙</div>
+                    <div>
+                        <h3>Active Patients</h3>
+                        <div class="stat-counter" data-target="0">0</div>
+                    </div>
+                </article>
+                <article class="stat-card" data-accent="pink">
+                    <div class="stat-icon">🗓️</div>
+                    <div>
+                        <h3>Upcoming Appointments</h3>
+                        <div class="stat-counter" data-target="0">0</div>
+                    </div>
+                </article>
+                <article class="stat-card" data-accent="purple">
+                    <div class="stat-icon">🩺</div>
+                    <div>
+                        <h3>Under Treatment</h3>
+                        <div class="stat-counter" data-target="0">0</div>
+                    </div>
+                </article>
+                <article class="stat-card" data-accent="red">
+                    <div class="stat-icon">⏸️</div>
+                    <div>
+                        <h3>Inactive Patients</h3>
+                        <div class="stat-counter" data-target="0">0</div>
+                    </div>
+                </article>
+            </section>
+
+            <section class="toolbar-card">
+                <div class="toolbar-fields">
+                    <label class="field-inline">
+                        <span>Search</span>
+                        <input type="text" id="toolbarSearch" placeholder="Name, ID, phone, or email" />
+                    </label>
+                    <label class="field-inline">
+                        <span>Gender</span>
+                        <select id="genderFilter">
+                            <option value="all">All</option>
+                            <option value="Female">Female</option>
+                            <option value="Male">Male</option>
+                            <option value="Non-binary">Non-binary</option>
+                        </select>
+                    </label>
+                    <label class="field-inline">
+                        <span>Age Group</span>
+                        <select id="ageFilter">
+                            <option value="all">All</option>
+                            <option value="child">Under 18</option>
+                            <option value="adult">18-44</option>
+                            <option value="middle">45-64</option>
+                            <option value="senior">65+</option>
+                        </select>
+                    </label>
+                    <label class="field-inline">
+                        <span>Assigned Dentist</span>
+                        <select id="dentistFilter">
+                            <option value="all">All</option>
+                            <option value="Dr. Sarah Johnson">Dr. Sarah Johnson</option>
+                            <option value="Dr. Michael Chen">Dr. Michael Chen</option>
+                            <option value="Dr. Alice Muhad">Dr. Alice Muhad</option>
+                        </select>
+                    </label>
+                    <label class="field-inline">
+                        <span>Medical Status</span>
+                        <select id="statusFilter">
+                            <option value="all">All</option>
+                            <option value="Healthy">Healthy</option>
+                            <option value="Under Treatment">Under Treatment</option>
+                            <option value="Requires Follow-up">Requires Follow-up</option>
+                            <option value="Prescription Issued">Prescription Issued</option>
+                            <option value="Emergency">Emergency</option>
+                            <option value="Completed Treatment">Completed Treatment</option>
+                        </select>
+                    </label>
+                </div>
+                <div class="toolbar-actions">
+                    <button class="secondary-btn" type="button" id="exportCsvBtn">Export CSV</button>
+                    <button class="secondary-btn" type="button" id="exportPdfBtn">Export PDF</button>
+                    <button class="secondary-btn" type="button" id="printPatientsBtn">Print List</button>
+                    <button class="primary-btn" type="button" id="refreshToolbarBtn">Refresh Data</button>
+                </div>
+            </section>
+
+            <section class="patients-content-grid">
+                <div class="panel patients-panel">
+                    <div class="panel-title">
+                        <div>
+                            <h2>Patient Directory</h2>
+                            <p>Responsive patient records with live Firestore updates.</p>
+                        </div>
+                        <div class="panel-actions">
+                            <button class="secondary-btn compact" type="button" id="bulkActionsBtn">Bulk Actions</button>
+                        </div>
+                    </div>
+                    <div class="table-wrap">
+                        <table class="patients-table">
+                            <thead>
+                                <tr>
+                                    <th><button class="sort-btn" data-sort="patientId">Patient ID</button></th>
+                                    <th>Profile</th>
+                                    <th><button class="sort-btn" data-sort="fullName">Full Name</button></th>
+                                    <th><button class="sort-btn" data-sort="gender">Gender</button></th>
+                                    <th><button class="sort-btn" data-sort="age">Age</button></th>
+                                    <th>Phone</th>
+                                    <th>Email</th>
+                                    <th><button class="sort-btn" data-sort="assignedDentist">Dentist</button></th>
+                                    <th><button class="sort-btn" data-sort="nextAppointment">Next Appointment</button></th>
+                                    <th><button class="sort-btn" data-sort="medicalStatus">Medical Status</button></th>
+                                    <th><button class="sort-btn" data-sort="accountStatus">Account Status</button></th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="patientsTableBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="table-footer">
+                        <div id="tableMeta">Loading patient records...</div>
+                        <div class="pagination" id="pagination"></div>
+                    </div>
+                </div>
+
+                <aside class="patients-side-panel">
+                    <div class="panel widget-card">
+                        <div class="panel-title compact-title">
+                            <div>
+                                <h3>Recently Registered</h3>
+                                <p>New patients added to the clinic directory.</p>
+                            </div>
+                        </div>
+                        <div id="recentPatientsList" class="widget-list"></div>
+                    </div>
+                    <div class="panel widget-card">
+                        <div class="panel-title compact-title">
+                            <div>
+                                <h3>Priority Attention</h3>
+                                <p>Patients requiring urgent follow-up.</p>
+                            </div>
+                        </div>
+                        <div id="priorityPatientsList" class="widget-list"></div>
+                    </div>
+                </aside>
+            </section>
+        </main>
+    </div>
+
+    <div class="modal-backdrop" id="patientModalBackdrop" hidden></div>
+    <div class="patient-modal" id="patientModal" role="dialog" aria-modal="true" aria-labelledby="patientModalTitle" hidden>
+        <button class="modal-close" type="button" id="closePatientModal">×</button>
+        <div id="patientModalContent"></div>
+    </div>
+
+    <div class="toast-stack" id="toastStack" aria-live="polite"></div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.22.0/firebase-firestore-compat.js"></script>
+    <script src="firebase-config.js"></script>
+    <script src="auth.js"></script>
+    <script src="patients-management.js"></script>
+</body>
+</html>
